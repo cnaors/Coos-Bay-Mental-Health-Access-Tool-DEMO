@@ -63,8 +63,8 @@ button{font:inherit;cursor:pointer}
 .brand{color:#fff;font-size:1.12rem;font-weight:700;letter-spacing:-.012em;line-height:1.22;text-decoration:none;margin-right:auto}
 .brand:hover{color:#fff}
 .brand small{display:block;color:#cdd9e1;font-size:.74rem;font-weight:450;margin-top:4px}
-.crisis-btn{background:#fff;color:var(--crisis);border:1px solid rgba(255,255,255,.85);border-radius:4px;padding:9px 14px;font-size:.86rem;font-weight:750;text-decoration:none;white-space:nowrap}
-.crisis-btn:hover{background:var(--crisis-t)}
+.crisis-btn{background:var(--crisis);color:#fff;border:1px solid rgba(255,255,255,.75);border-radius:4px;padding:9px 14px;font-size:.86rem;font-weight:750;text-decoration:none;white-space:nowrap}
+.crisis-btn:hover{background:#9a1d12}
 .navshell{background:#fff;border-bottom:1px solid var(--line)}
 nav.main{display:flex;gap:6px;overflow:visible;flex-wrap:nowrap;padding:6px 0}
 nav.main .navitem{position:relative;display:flex;align-items:center;flex:0 0 auto}
@@ -72,13 +72,16 @@ nav.main a{color:#52616d;text-decoration:none;font-size:.93rem;font-weight:650;p
 nav.main a:hover{background:var(--soft);color:var(--navy)}
 nav.main a.active{background:var(--navy);color:#fff;font-weight:750}
 /* caret + dropdown (disclosure pattern) */
-.subtoggle{border:0;background:transparent;color:#52616d;font-size:.7rem;padding:9px 7px 9px 2px;border-radius:6px;line-height:1}
+.subtoggle{border:0;background:transparent;color:#52616d;font-size:.75rem;padding:15px 11px;min-width:34px;min-height:44px;border-radius:6px;line-height:1}
 .subtoggle:hover{color:var(--navy)}
 .navitem.open .subtoggle{color:var(--navy)}
 .navsub{position:absolute;top:calc(100% + 4px);left:0;min-width:230px;background:#fff;border:1px solid var(--line-dark);border-radius:8px;box-shadow:0 12px 34px rgba(19,42,61,.18);padding:6px;display:none;z-index:60}
 .navitem.open .navsub{display:block}
 .navsub a{display:block;font-size:.9rem;font-weight:600;color:var(--ink);padding:9px 12px;border-radius:6px}
 .navsub a:hover{background:var(--teal-t);color:var(--teal-d)}
+/* clinicians & EMS button — yellow with black lines; sits beside the crisis button */
+.pro-btn{background:#e8c227;color:#141a20;border:2px solid #141a20;border-left:5px solid #141a20;border-radius:4px;padding:8px 10px;font-size:.8rem;font-weight:750;text-decoration:none;white-space:nowrap;line-height:1.2}
+.pro-btn:hover{background:#deb81d}
 
 /* ---------- page frame & heading levels ---------- */
 main{max-width:var(--content);margin:0 auto;padding:40px 28px 76px}
@@ -92,13 +95,14 @@ p.lead{font-size:1.03rem;line-height:1.55;max-width:760px;margin-bottom:26px;col
 h2.sec{font-family:var(--font-head);font-size:1.32rem;line-height:1.25;color:var(--navy);font-weight:700;letter-spacing:-.008em;text-transform:none;margin:50px 0 14px}
 h2.sec::before{content:"";display:block;width:44px;height:4px;border-radius:2px;background:var(--teal);margin-bottom:10px}
 .note{font-size:.86rem;color:var(--mut)}
-.tapnote{font-size:.86rem;color:var(--mut);margin:0 0 10px}
+h2.subview-title{font-family:var(--font-head);font-size:1.28rem;line-height:1.3;color:var(--navy);font-weight:700;letter-spacing:-.008em;margin:0 0 12px}
+.tapnote{font-size:.98rem;color:var(--mut);margin:0 0 10px;max-width:800px}
 
 /* ---------- sub-navigation: labeled, filled, color-coded tabs ---------- */
 .subnav-label{display:block;font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--mut);margin:0 0 8px}
 .subnav{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;margin:0 0 30px;padding:0 0 12px;border-bottom:2px solid var(--line-dark)}
 .subnav::-webkit-scrollbar{display:none}
-.subnav button{--tabc:var(--navy);--tabt:var(--navy-t);position:relative;flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line-dark);background:#fff;color:#42525f;border-radius:999px;padding:10px 18px;font-size:.93rem;font-weight:650;min-height:44px}
+.subnav button{--tabc:var(--navy);--tabt:var(--navy-t);position:relative;flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;border:1.5px solid #7a8c9b;background:#fff;color:#42525f;border-radius:999px;padding:10px 18px;font-size:.93rem;font-weight:650;min-height:44px}
 .subnav button::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--tabc);flex:0 0 auto}
 .subnav button:hover{border-color:var(--tabc);color:var(--tabc);background:var(--tabt)}
 .subnav button.on{background:var(--tabc);border-color:var(--tabc);color:#fff;font-weight:750}
@@ -110,6 +114,7 @@ h2.sec::before{content:"";display:block;width:44px;height:4px;border-radius:2px;
 #now .subnav button[data-s="crisis"]{--tabc:var(--crisis);--tabt:var(--crisis-t)}
 #now .subnav button[data-s="talk"]{--tabc:var(--teal);--tabt:var(--teal-t)}
 #now .subnav button[data-s="situations"]{--tabc:var(--navy);--tabt:var(--navy-t)}
+#now .subnav button[data-s="basics"]{--tabc:var(--ochre);--tabt:var(--ochre-t)}
 #care .subnav button,#info .subnav button{--tabc:var(--teal);--tabt:var(--teal-t)}
 #care .subnav button[data-s="directory"]{--tabc:var(--navy);--tabt:var(--navy-t)}
 .subview{display:none}
@@ -118,7 +123,7 @@ h2.sec::before{content:"";display:block;width:44px;height:4px;border-radius:2px;
 /* ---------- in-section jump row ---------- */
 .jumprow{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:0 0 20px;font-size:.82rem;color:var(--mut)}
 .jumprow .jumplabel{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:.7rem}
-.jumplink{border:1px solid var(--line-dark);background:#fff;color:var(--navy);border-radius:999px;padding:6px 13px;font-size:.82rem;font-weight:650}
+.jumplink{border:1px solid #7a8c9b;background:#fff;color:var(--navy);border-radius:999px;padding:6px 13px;font-size:.82rem;font-weight:650}
 .jumplink:hover{border-color:var(--teal);color:var(--teal-d);background:var(--teal-t)}
 .jump-target{scroll-margin-top:150px}
 .view h1,.subview{scroll-margin-top:125px}
@@ -126,18 +131,18 @@ h2.sec::before{content:"";display:block;width:44px;height:4px;border-radius:2px;
 /* ---------- component: info panel ---------- */
 .panel{background:#fff;border:0;border-left:4px solid #ccd7dd;border-radius:0;padding:18px 21px;margin:14px 0}
 .panel h3{font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:5px}
-.panel p{font-size:.95rem;line-height:1.58;margin:6px 0}
+.panel p{font-size:1rem;line-height:1.58;margin:6px 0;max-width:800px}
 .panel.tint{background:var(--teal-t);border-color:var(--teal)}
 .panel.warn{background:var(--warn-t);border-color:var(--warn-b)}
-.panel.warn p{font-size:.94rem}
+.panel.warn p{font-size:1rem}
 
 /* ---------- component: action row ---------- */
 .row{display:flex;align-items:center;justify-content:space-between;gap:24px;background:transparent;border-bottom:1px solid var(--line);padding:17px 2px;margin:0}
 .row:first-of-type{border-top:1px solid var(--line)}
 .row .rl{min-width:0}
-.row .rl>b{display:block;font-size:1rem;color:var(--navy);font-weight:720}
-.row .rl span{display:block;font-size:.88rem;color:var(--mut);line-height:1.5;margin-top:2px}
-.row .act{background:#fff;color:var(--teal-d);border:1px solid #98b9bc;border-radius:4px;padding:8px 12px;min-height:38px;font-size:.84rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.row .rl>b,.row .rl>h3,.row .rl>h4{display:block;font-size:1rem;color:var(--navy);font-weight:720;margin:0;font-family:var(--font-body);line-height:inherit}
+.row .rl span{display:block;font-size:1rem;color:var(--mut);line-height:1.5;margin-top:2px;max-width:820px}
+.row .act{background:#fff;color:var(--teal-d);border:1px solid #5f8489;border-radius:4px;padding:8px 12px;min-height:38px;font-size:.84rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
 .row .act:hover{background:var(--teal-t)}
 .row.crisis{border-bottom-color:#e6cfcd}
 .row.crisis .act{background:var(--crisis);border-color:var(--crisis);color:#fff}
@@ -146,7 +151,7 @@ h2.sec::before{content:"";display:block;width:44px;height:4px;border-radius:2px;
 .row .contact-actions .act{min-width:72px}
 .row .contact-actions .act.call{background:var(--navy);color:#fff;border:1px solid var(--navy)}
 .row.crisis .contact-actions .act.call{background:var(--crisis);border-color:var(--crisis)}
-.row .contact-actions .act.text{background:#fff;color:var(--navy);border:1px solid #9fb2bd}
+.row .contact-actions .act.text{background:#fff;color:var(--navy);border:1px solid #6d8191}
 .row.crisis .contact-actions .act.text{color:var(--crisis);border-color:#d4a09d}
 
 /* ---------- component: expandable card ---------- */
@@ -158,9 +163,9 @@ details.card>summary::-webkit-details-marker{display:none}
 details.card>summary .ct{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font-weight:700;font-size:1.05rem;color:var(--navy)}
 details.card>summary .ct:after{content:'+';color:var(--teal-d);font-weight:400;font-size:1.25rem;line-height:1}
 details.card[open]>summary .ct:after{content:'−'}
-details.card>summary .cs{font-size:.87rem;color:var(--mut);margin-top:4px;line-height:1.45;max-width:780px}
+details.card>summary .cs{font-size:1rem;color:var(--mut);margin-top:4px;line-height:1.45;max-width:780px}
 details.card .cb{padding:4px 4px 20px}
-details.card .cb p{margin:9px 0;font-size:.94rem}
+details.card .cb p{margin:9px 0;font-size:1rem;max-width:800px}
 .resource-group{margin-top:14px}
 .resource-group>.cb{padding-top:10px}
 .resource-group .row{margin:0;background:transparent}
@@ -177,28 +182,53 @@ details.card.provider-card .cb{padding:5px 19px 20px;border-top:1px solid #edf0f
 .badge,.meta-chip{display:inline-flex;align-items:center;border-radius:3px;font-size:.74rem;font-weight:650;padding:4px 7px;background:#f1f4f5;border:1px solid #d8e0e4;color:#4c5d69;line-height:1.25;min-height:27px}
 .badge.ok,.meta-chip.status-ok{background:#edf7f4;border-color:#b9d9d1;color:#225f57}
 .card-meta{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}
+.provider-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px;margin:13px 0 0}
+.provider-fact{min-width:0}
+.provider-fact dt{font-size:.74rem;font-weight:800;letter-spacing:.055em;text-transform:uppercase;color:#60727f;margin-bottom:1px}
+.provider-fact dd{font-size:1rem;line-height:1.4;color:var(--ink);font-weight:600;margin:0}
+.provider-fact.access dd{color:var(--teal-d)}
 .actions{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0 4px}
-.actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-size:.84rem;font-weight:700;padding:8px 12px;border-radius:4px;min-height:39px;max-width:100%}
+.actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-size:.95rem;font-weight:700;padding:9px 14px;border-radius:4px;min-height:44px;max-width:100%}
 .actions a.pri{background:var(--navy);color:#fff;border:1px solid var(--navy)}
-.actions a.sec{border:1px solid #a5b9c2;color:var(--navy);background:#fff}
+.actions a.sec{border:1px solid #6d8191;color:var(--navy);background:#fff}
 .actions .hint{flex-basis:100%;font-size:.78rem;color:var(--mut)}
 .chead{font-size:.73rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#586a77;margin:19px 0 7px}
 .locs{border:1px solid var(--line);border-radius:4px;overflow:hidden}
-.loc{padding:11px 13px;border-top:1px solid var(--line);font-size:.9rem;background:#fff}
+.loc{padding:11px 13px;border-top:1px solid var(--line);font-size:.95rem;background:#fff}
 .loc:first-child{border-top:0}
 .loc .l1{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
 .loc .l1 b{font-size:.9rem;color:var(--navy)}
 .loc .l1 a{font-weight:700;text-decoration:none;white-space:nowrap}
-.loc .lh,.loc .la{font-size:.81rem;color:var(--mut);margin-top:2px}
+.loc .lh,.loc .la{font-size:.88rem;color:var(--mut);margin-top:2px}
 .loc .la{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .loc .la a.direction-link{font-weight:750;color:var(--teal-d);text-decoration:none}
 .chipset .tagi{display:inline-block;font-size:.76rem;font-weight:600;background:#f4f6f7;border:1px solid #dde3e6;color:var(--ink);padding:4px 8px;border-radius:3px;margin:2px 5px 2px 0}
 .chipset .tagi.ohp{background:var(--teal-t);border-color:#bfd8d3;color:var(--teal-d)}
-.cnote{font-size:.85rem;background:var(--warn-t);border:1px solid var(--warn-b);border-radius:6px;padding:9px 12px;margin:12px 0 0}
+.cnote{font-size:.95rem;background:var(--warn-t);border:1px solid var(--warn-b);border-radius:6px;padding:9px 12px;margin:12px 0 0}
 .verified{font-size:.78rem;background:#f8fafb;padding:9px 10px;margin-top:17px;color:#64747f;border-radius:4px}
 
+
+/* screen-reader-only headings (fill skipped levels without visual change) */
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* care-chooser group captions */
+h2.tri-cap,h3.tri-cap{display:block;font-size:.74rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--mut);margin:20px 0 2px;font-family:var(--font-body)}
+h2.tri-cap:first-of-type,h3.tri-cap:first-of-type{margin-top:4px}
+/* provider card v2: header always visible (name, badges, actions); short disclosure for detail */
+.card.provider-card{display:block;border:1px solid var(--line);border-left:4px solid #9bbec1;border-radius:var(--r);margin:12px 0;background:#fff}
+.provider-card .phead{padding:18px 19px 6px}
+.provider-card .phead h3.ct{font-size:1.05rem;font-weight:700;color:var(--navy);margin:0;font-family:var(--font-body);line-height:1.35}
+.provider-card .phead .cs{font-size:1rem;color:var(--mut);margin-top:4px;line-height:1.5;max-width:780px}
+.provider-card .phead .actions{margin:13px 0 10px}
+details.pmore{border-top:1px solid #edf0f2}
+details.pmore>summary{list-style:none;cursor:pointer;padding:12px 19px;font-size:.9rem;font-weight:700;color:var(--teal-d)}
+details.pmore>summary::-webkit-details-marker{display:none}
+details.pmore>summary:after{content:" +";font-weight:400}
+details.pmore[open]>summary:after{content:" −"}
+details.pmore .cb{padding:0 19px 20px}
+details.pmore .cb p{font-size:1rem;max-width:800px}
+
 /* ---------- provider reference links ---------- */
-.reflink{padding:12px 2px;border-top:1px solid var(--line);font-size:.88rem}
+.reflink{padding:12px 2px;border-top:1px solid var(--line);font-size:.94rem}
 .reflink:first-of-type{border-top:0}
 .reflink b{display:block;margin-bottom:2px}
 .reflink span{color:var(--mut);line-height:1.5}
@@ -222,37 +252,40 @@ details.card.provider-card .cb{padding:5px 19px 20px;border-top:1px solid #edf0f
 .door .eyebrow{display:block;font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--teal-d);margin-bottom:8px}
 .door b{display:block;font-size:1.18rem;color:var(--navy);line-height:1.25;margin-bottom:8px;letter-spacing:-.01em}
 .door.primary b{font-size:1.4rem;max-width:370px}
-.door span:last-child{display:block;font-size:.9rem;color:var(--mut);line-height:1.5;max-width:500px}
+.door span:last-child{display:block;font-size:.95rem;color:var(--mut);line-height:1.5;max-width:500px}
 .homesearch{display:flex;gap:8px;margin:26px 0 10px;max-width:690px}
-.homesearch input{flex:1;padding:13px 14px;border:1px solid var(--line-dark);border-radius:4px;font-size:.95rem;background:#fff;min-width:0}
+.homesearch input{flex:1;padding:13px 14px;border:1px solid #6d8191;border-radius:4px;font-size:.95rem;background:#fff;min-width:0}
 .homesearch button{background:var(--navy);color:#fff;border:0;border-radius:4px;padding:0 18px;font-weight:700}
 .quiet-links{font-size:.88rem;color:var(--mut);margin-top:14px}
 .quiet-links a,.quiet-links .term{text-decoration:none;border-bottom:1px solid #9dbdc0}
 
 /* ---------- triage ---------- */
 .triage a{display:block;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;margin:9px 0;text-decoration:none;color:var(--navy);font-size:.96rem;font-weight:650}
-.triage a small{display:block;color:var(--mut);font-size:.82rem;font-weight:450;margin-top:2px}
+.triage a small{display:block;color:var(--mut);font-size:.88rem;font-weight:450;margin-top:2px}
 .triage a.urgent{border-left:4px solid var(--crisis)}
 .triage a:hover{border-color:var(--teal)}
 
 /* ---------- audience blocks: color-keeled, tinted headers ---------- */
-.aud{--cat:var(--teal);--cat-t:var(--teal-t);border:1px solid var(--line);border-left:5px solid var(--cat);border-radius:var(--r);background:#fff;margin:18px 0;overflow:hidden}
+.aud{--cat:var(--teal);--cat-t:var(--teal-t);border:0;background:transparent;margin:18px 0}
 .aud-fam{--cat:var(--teal);--cat-t:var(--teal-t)}
 .aud-pro{--cat:var(--navy);--cat-t:var(--navy-t)}
 .aud-kid{--cat:var(--ochre);--cat-t:var(--ochre-t)}
-.audhead{background:var(--cat-t);border-bottom:1px solid var(--line);padding:17px 20px}
-.audhead b{display:block;font-family:var(--font-head);color:var(--navy);font-size:1.18rem;font-weight:700;letter-spacing:-.008em}
-.audhead span{font-size:.86rem;color:var(--mut)}
-.aud .audbody{padding:6px 20px 18px}
+.audhead{background:var(--cat-t);border:1px solid var(--line);border-left:5px solid var(--cat);border-radius:var(--r);padding:17px 20px}
+.audhead b,.audhead h2{display:block;font-family:var(--font-head);color:var(--navy);font-size:1.18rem;font-weight:700;letter-spacing:-.008em;margin:0;line-height:1.3}
+.audhead span{font-size:.9rem;color:var(--mut)}
+.aud .audbody{padding:6px 2px 4px}
 .minirow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid var(--line);font-size:.93rem;flex-wrap:wrap}
 .minirow:last-of-type{border-bottom:0}
-.minirow .mr-l>b{display:block;font-size:.97rem;color:var(--navy);font-weight:700}
-.minirow .mr-l span{display:block;font-size:.84rem;color:var(--mut);line-height:1.5;margin-top:2px}
-.minirow a.mr-call{font-weight:700;text-decoration:none;white-space:nowrap;border:1px solid #9eb8c0;color:var(--navy);padding:7px 11px;border-radius:4px;min-width:70px;text-align:center;display:inline-flex;align-items:center;justify-content:center}
-.mini-actions .mr-text{display:inline-flex;align-items:center;justify-content:center;min-width:70px;min-height:39px;padding:7px 12px;border-radius:4px;border:1px solid #9fb2bd;color:var(--navy);background:#fff;font-weight:700;text-decoration:none;font-size:.84rem}
-.law{background:#f6f8f9;border-left:3px solid #8499a6;padding:11px 13px;font-size:.84rem;margin:9px 0}
+.minirow .mr-l>b,.minirow .mr-l>h3{display:block;font-size:.97rem;color:var(--navy);font-weight:700;margin:0;font-family:var(--font-body);line-height:inherit}
+.minirow .mr-l span{display:block;font-size:1rem;color:var(--mut);line-height:1.5;margin-top:2px;max-width:820px}
+.minirow .mr-l span.resource-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 18px;margin-top:9px}
+.minirow .mr-l .resource-facts>span{display:block;margin:0;color:var(--ink)}
+.resource-facts b{display:block;font-size:.74rem;line-height:1.3;letter-spacing:.055em;text-transform:uppercase;color:#60727f;margin-bottom:1px}
+.minirow a.mr-call{font-weight:700;text-decoration:none;white-space:nowrap;border:1px solid #6d8191;color:var(--navy);padding:7px 11px;border-radius:4px;min-width:70px;text-align:center;display:inline-flex;align-items:center;justify-content:center}
+.mini-actions .mr-text{display:inline-flex;align-items:center;justify-content:center;min-width:70px;min-height:39px;padding:7px 12px;border-radius:4px;border:1px solid #6d8191;color:var(--navy);background:#fff;font-weight:700;text-decoration:none;font-size:.84rem}
+.law{background:#f6f8f9;border-left:3px solid #8499a6;padding:11px 13px;font-size:.9rem;margin:9px 0;max-width:800px}
 .siglist{margin:4px 0;padding:0;list-style:none}
-.siglist li{padding:4px 0 4px 18px;position:relative;font-size:.88rem}
+.siglist li{padding:4px 0 4px 18px;position:relative;font-size:.94rem}
 .siglist li:before{content:'–';position:absolute;left:2px;color:var(--teal)}
 .sigcap{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin:12px 0 3px}
 
@@ -275,8 +308,8 @@ details.protocol-bundle>summary small{display:block;color:var(--mut);font-size:.
 .directory-tools{background:#fff;border:1px solid var(--line-dark);border-radius:var(--r);padding:20px 22px;margin-bottom:25px}
 .search-label{display:block;font-size:.72rem;font-weight:800;color:#657581;text-transform:uppercase;letter-spacing:.065em;margin-bottom:5px}
 .search-wrap{display:flex;gap:8px;align-items:stretch}
-.search{width:100%;flex:1;margin:0;padding:12px 13px;border:1px solid var(--line-dark);border-radius:4px;font-size:.95rem;background:#fff}
-.clear-search{display:none;border:1px solid #aebdc5;background:#fff;color:var(--navy);border-radius:4px;padding:0 11px;font-size:.8rem;font-weight:700;white-space:nowrap}
+.search{width:100%;flex:1;margin:0;padding:12px 13px;border:1px solid #6d8191;border-radius:4px;font-size:.95rem;background:#fff}
+.clear-search{display:none;border:1px solid #6d8191;background:#fff;color:var(--navy);border-radius:4px;padding:0 11px;font-size:.8rem;font-weight:700;white-space:nowrap}
 .clear-search.show{display:block}
 .filter-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:14px 0 8px;font-size:.9rem}
 .filter-head b{color:var(--navy)}
@@ -286,7 +319,7 @@ details.protocol-bundle>summary small{display:block;color:var(--mut);font-size:.
 .filter-group:first-child{border-top:0;padding-top:2px}
 .filter-group-label{display:block;font-size:.72rem;font-weight:800;color:#657581;text-transform:uppercase;letter-spacing:.065em;margin-bottom:7px}
 .filter-group-options{display:flex;gap:7px;flex-wrap:wrap}
-.chip{border:1px solid #cfd8dd;background:#fff;color:#485b68;font-size:.81rem;font-weight:600;padding:7px 11px;border-radius:4px;min-height:36px}
+.chip{border:1px solid #7a8c9b;background:#fff;color:#485b68;font-size:.81rem;font-weight:600;padding:7px 11px;border-radius:4px;min-height:36px}
 .chip:hover{border-color:#87adb1;color:var(--teal-d)}
 .chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
 .count{font-size:.8rem;color:var(--mut);margin:8px 0 2px}
@@ -306,18 +339,9 @@ details.protocol-bundle>summary small{display:block;color:var(--mut);font-size:.
 #info-about .panel:first-child{border-top:4px solid var(--navy)}
 /* cost-page triage buttons share the triage link look */
 .triage button.jumplink{display:block;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;margin:9px 0;color:var(--navy);font-size:.96rem;font-weight:650}
-.triage button.jumplink small{display:block;color:var(--mut);font-size:.82rem;font-weight:450;margin-top:2px}
+.triage button.jumplink small{display:block;color:var(--mut);font-size:.88rem;font-weight:450;margin-top:2px}
 .triage button.jumplink:hover{border-color:var(--teal)}
 .correction-panel{grid-column:1/-1!important}
-.correction-form{margin-top:14px;max-width:780px}
-.correction-form label{display:block;font-weight:700;font-size:.83rem;color:var(--navy);margin:12px 0}
-.correction-form input,.correction-form textarea{display:block;width:100%;margin-top:5px;padding:10px 11px;border:1px solid var(--line-dark);border-radius:4px;background:#fff;color:var(--ink);font:inherit;font-weight:400;font-size:.91rem}
-.correction-form textarea{resize:vertical;min-height:88px}
-.correction-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
-.correction-actions button{min-height:42px;border-radius:4px;border:1px solid var(--navy);background:var(--navy);color:#fff;padding:9px 13px;font-weight:700;font-size:.86rem}
-.correction-actions .secondary-action{background:#fff;color:var(--navy);border-color:#9fb2bd}
-.form-note{font-size:.78rem!important;color:var(--mut);margin-top:10px!important;max-width:700px}
-.form-status{font-size:.82rem;font-weight:650;color:var(--teal-d);min-height:1.2em;margin-top:7px}
 
 /* ---------- who-does-what slide-over ---------- */
 .slideover{position:fixed;top:0;right:0;bottom:0;width:min(430px,94vw);background:#fff;z-index:80;transform:translateX(105%);transition:transform .22s ease;box-shadow:var(--shadow-lg);border-left:1px solid var(--line);display:flex;flex-direction:column}
@@ -330,7 +354,7 @@ details.protocol-bundle>summary small{display:block;color:var(--mut);font-size:.
 .role .rt{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .role b{font-size:.95rem;color:var(--navy)}
 .role .cred{font-size:.73rem;color:var(--mut)}
-.role p{font-size:.86rem;margin-top:4px;color:#2c3e4e}
+.role p{font-size:.92rem;margin-top:4px;color:#2c3e4e}
 .role .rx{font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:3px;white-space:nowrap}
 .rx.yes{background:var(--teal-t);color:var(--teal-d)}
 .rx.no{background:var(--bg);color:var(--mut);border:1px solid var(--line)}
@@ -355,6 +379,10 @@ footer a{color:var(--teal-d)}
   .door.primary{grid-row:auto;border-right:0;border-bottom:1px solid var(--line-dark)}
   #info-about.on{grid-template-columns:1fr}
 }
+@media (max-width:840px){
+  nav.main a{padding:9px 8px;font-size:.88rem}
+  .subtoggle{padding:15px 6px;min-width:26px}
+}
 @media (max-width:680px){
   body{font-size:16px}
   .hwrap{padding:0 16px}
@@ -366,6 +394,7 @@ footer a{color:var(--teal-d)}
   nav.main a{padding:9px 10px;font-size:.86rem}
   .subtoggle{display:none}          /* dropdowns are desktop-only; tabs handle mobile */
   .navsub{display:none!important}
+  .pro-btn{font-size:.74rem;padding:8px 8px;border-left-width:4px;min-height:44px;display:inline-flex;align-items:center}
   main{padding:28px 16px 88px}
   .hero h1{font-size:2.25rem}
   .door,.door.primary{padding:20px 48px 20px 19px}
@@ -380,8 +409,11 @@ footer a{color:var(--teal-d)}
   .mini-actions{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
   .mini-actions:has(a:only-child){grid-template-columns:1fr}
   .mini-actions a{width:100%}
-  details.card.provider-card>summary{padding:16px 15px}
-  details.card.provider-card .cb{padding:4px 15px 18px}
+  .provider-card .phead{padding:15px 15px 4px}
+  .provider-facts{grid-template-columns:1fr;gap:8px}
+  .minirow .mr-l span.resource-facts{grid-template-columns:1fr}
+  details.pmore>summary{padding:11px 15px}
+  details.pmore .cb{padding:0 15px 18px}
   .directory-tools{padding:16px}
   .actions{display:grid;grid-template-columns:1fr 1fr}
   .actions a{width:100%;text-align:center;min-height:44px}
@@ -392,24 +424,25 @@ footer a{color:var(--teal-d)}
   details.protocol-bundle>summary>span{display:block;padding-right:22px;position:relative}
   details.protocol-bundle>summary>span:after{position:absolute;right:0;top:0}
   details.protocol-bundle>summary small{margin-top:4px}
-  .correction-actions button,.clear-search{min-height:44px}
+  .clear-search{min-height:44px}
   .qexit{right:calc(12px + env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));min-height:44px}
 }
 @media (max-width:430px){
   .brand small{display:none}
-  .crisis-btn{max-width:118px;text-align:center;line-height:1.2}
+  .crisis-btn{line-height:1.2}
+  .hb{display:none}
+  .pro-btn{font-size:.68rem;padding:6px 6px;min-height:40px}
   .hero h1{font-size:2rem}
   .actions{grid-template-columns:1fr}
   .actions .hint{grid-column:auto}
   .crisis-line a{width:100%;text-align:center}
   .search-wrap{grid-template-columns:1fr}
   .clear-search.show{width:100%}
-  .correction-actions{display:grid;grid-template-columns:1fr}
 }
 @media print{
   header,.site-header,.qexit,.backdrop,.next,.homesearch,.subnav,.subnav-label,.jumprow,.directory-tools{display:none!important}
   body{background:#fff}
-  .panel,.row,details.card{break-inside:avoid}
+  .panel,.row,details.card,.card.provider-card{break-inside:avoid}
 }
 
 </style>
@@ -422,7 +455,8 @@ footer a{color:var(--teal-d)}
     <div class="hwrap">
       <div class="hrow">
         <a class="brand" href="#home">Coos County Mental Health Guide<small>Community resource guide · Coos Bay · North Bend · Bandon · Coquille</small></a>
-        <a class="crisis-btn" href="#now/crisis">Crisis &amp; 24/7 help</a>
+        <a class="crisis-btn" href="#now/crisis">Crisis<span class="hb">&nbsp;&amp; 24/7 help</span></a>
+        <a class="pro-btn" href="#helpers/pros" aria-label="Providers — for clinicians and EMS">Providers</a>
       </div>
     </div>
   </div>
@@ -437,6 +471,7 @@ footer a{color:var(--teal-d)}
             <a href="#now/crisis">Crisis lines</a>
             <a href="#now/talk">Talk to someone today</a>
             <a href="#now/situations">Specific situations</a>
+            <a href="#now/basics">Food, housing &amp; bills</a>
           </div>
         </div>
         <div class="navitem has-sub">
@@ -455,8 +490,8 @@ footer a{color:var(--teal-d)}
           <button type="button" class="subtoggle" aria-expanded="false" aria-controls="sub-helpers" aria-label="Show sections inside Help someone else">▾</button>
           <div class="navsub" id="sub-helpers">
             <a href="#helpers/family">Family &amp; friends</a>
-            <a href="#helpers/pros">Clinicians &amp; EMS</a>
             <a href="#helpers/kids">Teachers &amp; youth</a>
+            <a href="#helpers/pros">Clinicians &amp; EMS</a>
           </div>
         </div>
         <div class="navitem has-sub">
@@ -480,35 +515,38 @@ footer a{color:var(--teal-d)}
   <div class="hero">
     <h1>Where to get mental health help in Coos County</h1>
     <p>Verified local options for crisis support, therapy, medication, telehealth, insurance, and cost help.</p>
-    <div class="trust-line" aria-label="Resource verification status"><span class="trust-mark" aria-hidden="true">✓</span><span><b>Key public services rechecked August 10, 2026.</b> Full directory reviewed July 5, 2026. Availability can change — call ahead.</span></div>
+    <div class="trust-line" aria-label="Resource verification status"><span class="trust-mark" aria-hidden="true">✓</span><span><b>Rechecked August 10, 2026.</b> Availability changes — call ahead. Review dates are in the footer.</span></div>
   </div>
+  <h2 class="vh">Choose what you need</h2>
   <div class="crisis-line"><div style="flex:1;min-width:230px"><b>In crisis right now?</b> Free, 24/7, for you or someone else.</div><a href="tel:988">Call 988</a><a href="sms:988">Text 988</a><a href="tel:5412666800">Call local</a></div>
   <div class="doors home-actions">
-    <a class="door primary" href="#care/start"><span class="eyebrow">Not sure where to start?</span><b>Help me figure out what I need</b><span>Choose the sentence closest to what is happening. We will point you to the right next step.</span></a>
-    <a class="door" href="#care"><span class="eyebrow">Therapy · medication · video visits</span><b>Find ongoing care</b><span>See local options, availability notes, insurance, and ways to contact providers.</span></a>
-    <a class="door" href="#helpers"><span class="eyebrow">Family · clinicians · teachers</span><b>I’m helping someone else</b><span>Practical next steps when you are worried about another person.</span></a>
+    <a class="door primary" href="#care/start"><span class="eyebrow">Not sure where to start?</span><b>Help me figure out what I need</b><span>Pick the sentence that fits — we'll point the way.</span></a>
+    <a class="door" href="#care"><span class="eyebrow">Therapy · medication · video visits</span><b>Find ongoing care</b><span>See local providers and how to reach them.</span></a>
+    <a class="door" href="#helpers"><span class="eyebrow">Family · clinicians · teachers</span><b>I’m helping someone else</b><span>Practical next steps when you're worried.</span></a>
   </div>
   <form class="homesearch" id="homeSearchForm"><input id="homeSearch" type="search" placeholder="Search a provider, town, or service…" aria-label="Search all providers"><button type="submit">Search</button></form>
-  <p class="quiet-links"><a href="#info">Cost, insurance &amp; OHP</a> · <button class="term" id="learnLink2">Who does what?</button> · <a href="#care/directory">Browse all providers</a></p>
+  <p class="quiet-links"><a href="#info/costs">Apply for OHP — free coverage</a> · <a href="#info">Cost &amp; insurance</a> · <button class="term" id="learnLink2">Who does what?</button> · <a href="#care/directory">Browse all providers</a></p>
 </section>
 
 <!-- ================= GET HELP NOW ================= -->
 <section id="now" class="view">
   <h1 class="pg">Help right now</h1>
-  <p class="lead">There are three speeds of "now": a crisis line this minute, a real person today, or the right line for your exact situation.</p>
+  <p class="lead">There are three speeds of "now": a crisis line this minute, a real person today, or the right line for your exact situation. Food, housing, and bill emergencies have their own tab.</p>
   <span class="subnav-label" id="lbl-now">Choose how fast you need help</span>
   <div class="subnav" data-group="now" aria-describedby="lbl-now">
     <button data-s="crisis" class="on">Crisis</button>
     <button data-s="talk">Talk to someone today</button>
     <button data-s="situations">Specific situations</button>
+    <button data-s="basics">Food, housing &amp; bills</button>
   </div>
 
   <div class="subview on" id="now-crisis">
-    <div class="panel warn"><p><b>Already taken pills or hurt yourself?</b> Call 911, or <b>800-222-1222</b> — the national Poison Control network, staffed by pharmacists and nurses — right now. Don't wait to see how you feel.</p></div>
-    <div class="row crisis"><div class="rl"><b>988 Suicide &amp; Crisis Lifeline</b><span>Call or text <b>988</b> — reaches Lines for Life, the nonprofit crisis center that answers Oregon's 988 calls. A trained crisis counselor, any struggle; most calls are simply a conversation. Spanish 1-888-628-9454 · Veterans press 1</span></div><div class="contact-actions" aria-label="988 contact options"><a class="act call" href="tel:988">Call</a><a class="act text" href="sms:988">Text</a></div></div>
-    <div class="row crisis"><div class="rl"><b>Coos County crisis line</b><span>Call <b>541-266-6800</b> (toll-free 888-543-5763) — reaches Coos Health &amp; Wellness, the county's public mental health program. A local crisis worker answers 24/7 and can send the mobile crisis team.</span></div><div class="contact-actions" aria-label="Coos County crisis contact options"><a class="act call" href="tel:5412666800">Call</a></div></div>
-    <div class="row crisis"><div class="rl"><b>Domestic violence &amp; sexual assault hotline</b><span>Call <b>541-756-7000</b> (toll-free 888-793-5612) — reaches The SAFE Project, the local advocacy nonprofit for Coos &amp; Curry counties. 24/7, confidential; advocates come to your home, the hospital, or the police station. You can also text <b>SAFE</b> to the same number.</span></div><div class="contact-actions" aria-label="SAFE Project contact options"><a class="act call" href="tel:5417567000">Call</a><a class="act text" href="sms:5417567000?body=SAFE">Text</a></div></div>
-    <div class="row"><div class="rl"><b>Crisis Text Line</b><span>Text <b>OREGON to 741741</b>. A trained crisis counselor replies by text.</span></div><div class="contact-actions" aria-label="Crisis Text Line contact options"><a class="act text" href="sms:741741?body=OREGON">Text</a></div></div>
+    <h2 class="subview-title">Crisis lines and immediate help</h2>
+    <div class="panel warn" role="note" aria-labelledby="warn-poison"><h3 id="warn-poison">Taken pills or hurt yourself?</h3><p>Call 911, or <b>800-222-1222</b> — the national Poison Control network, staffed by pharmacists and nurses — right now. Don't wait to see how you feel.</p></div>
+    <div class="row crisis"><div class="rl"><h3>988 Suicide &amp; Crisis Lifeline</h3><span><b>Call or text:</b> 988 · <b>Available:</b> 24/7, free. <b>Who answers:</b> a trained crisis counselor at Lines for Life, the nonprofit that answers Oregon's 988 calls. <b>What they can do:</b> listen, talk it through, and help you make a plan — any struggle counts, and most calls are simply a conversation. Spanish: 1-888-628-9454 · Veterans: press 1.</span></div><div class="contact-actions" aria-label="988 contact options"><a class="act call" href="tel:988" aria-label="Call — 988 Suicide &amp; Crisis Lifeline">Call</a><a class="act text" href="sms:988" aria-label="Text — 988 Suicide &amp; Crisis Lifeline">Text</a></div></div>
+    <div class="row crisis"><div class="rl"><h3>Coos County crisis line</h3><span><b>Call:</b> 541-266-6800 (toll-free 888-543-5763) · <b>Available:</b> 24/7. <b>Who answers:</b> a local crisis worker at Coos Health &amp; Wellness, the county's public mental health program. <b>What they can do:</b> talk you through it, set up a next-day appointment, or send the mobile crisis team.</span></div><div class="contact-actions" aria-label="Coos County crisis contact options"><a class="act call" href="tel:5412666800" aria-label="Call — Coos County crisis line">Call</a></div></div>
+    <div class="row crisis"><div class="rl"><h3>Domestic violence &amp; sexual assault hotline</h3><span><b>Call:</b> 541-756-7000 (toll-free 888-793-5612), or text <b>SAFE</b> to the same number · <b>Available:</b> 24/7, confidential. <b>Who answers:</b> an advocate at The SAFE Project, the local nonprofit for Coos &amp; Curry counties. <b>What they can do:</b> come to your home, the hospital, or the police station, and help with safety planning and confidential shelter.</span></div><div class="contact-actions" aria-label="SAFE Project contact options"><a class="act call" href="tel:5417567000" aria-label="Call — Domestic violence &amp; sexual assault hotline">Call</a><a class="act text" href="sms:5417567000?body=SAFE" aria-label="Text — Domestic violence &amp; sexual assault hotline">Text</a></div></div>
+    <div class="row"><div class="rl"><h3>Crisis Text Line</h3><span><b>Text:</b> OREGON to 741741 · <b>Available:</b> 24/7. <b>Who answers:</b> a trained crisis counselor, who replies by text.</span></div><div class="contact-actions" aria-label="Crisis Text Line contact options"><a class="act text" href="sms:741741?body=OREGON" aria-label="Text — Crisis Text Line">Text</a></div></div>
     <p class="note" style="margin:10px 0">Internet and phone use can be monitored. If someone checks your device, use the <b>Quick exit</b> button (bottom corner), clear your history afterward, or call from a safer phone.</p>
     <nav class="jumprow" aria-label="In this section"><span class="jumplabel">Further down this page:</span><button type="button" class="jumplink" data-target="crisis-what-happens">What happens when you call</button><button type="button" class="jumplink" data-target="crisis-other-urgent">Other urgent situations</button><button type="button" class="jumplink" data-target="crisis-hospital">Hospital, detox &amp; after</button></nav>
     <details class="card jump-target" id="crisis-what-happens"><summary><span class="ct">What actually happens when you call?</span></summary><div class="cb">
@@ -519,10 +557,10 @@ footer a{color:var(--teal-d)}
     <details class="card resource-group jump-target" id="crisis-other-urgent">
       <summary><span class="ct">Other urgent situations &amp; advocacy</span><span class="cs">Find the right line for sexual assault, abuse reporting, domestic violence, and human trafficking.</span></summary>
       <div class="cb">
-        <div class="row"><div class="rl"><b>Sexual assault</b><span>RAINN: call <b>800-656-4673</b> or text <b>HOPE to 64673</b>. 24/7 and anonymous; they connect you to your nearest crisis center.</span></div><div class="contact-actions" aria-label="RAINN contact options"><a class="act call" href="tel:8006564673">Call</a><a class="act text" href="sms:64673?body=HOPE">Text</a></div></div>
-        <div class="row"><div class="rl"><b>Child, elder, or vulnerable adult abuse</b><span>Call <b>855-503-7233</b> — Oregon's 24/7 abuse reporting line for children, elders, and vulnerable adults.</span></div><div class="contact-actions" aria-label="Oregon abuse reporting contact options"><a class="act call" href="tel:8555037233">Call</a></div></div>
-        <div class="row"><div class="rl"><b>Domestic violence (national line)</b><span>National Domestic Violence Hotline: call <b>800-799-7233</b> or text <b>START to 88788</b>. Trained advocates answer 24/7.</span></div><div class="contact-actions" aria-label="National Domestic Violence Hotline contact options"><a class="act call" href="tel:8007997233">Call</a><a class="act text" href="sms:88788?body=START">Text</a></div></div>
-        <div class="row"><div class="rl"><b>Human trafficking</b><span>National Human Trafficking Hotline: call <b>888-373-7888</b> or text <b>233733</b>. Available 24/7.</span></div><div class="contact-actions" aria-label="Human Trafficking Hotline contact options"><a class="act call" href="tel:8883737888">Call</a><a class="act text" href="sms:233733">Text</a></div></div>
+        <div class="row"><div class="rl"><h3>Sexual assault</h3><span>RAINN: call <b>800-656-4673</b> or text <b>HOPE to 64673</b>. 24/7 and anonymous; they connect you to your nearest crisis center.</span></div><div class="contact-actions" aria-label="RAINN contact options"><a class="act call" href="tel:8006564673" aria-label="Call — Sexual assault">Call</a><a class="act text" href="sms:64673?body=HOPE" aria-label="Text — Sexual assault">Text</a></div></div>
+        <div class="row"><div class="rl"><h3>Child, elder, or vulnerable adult abuse</h3><span>Call <b>855-503-7233</b> — Oregon's 24/7 abuse reporting line for children, elders, and vulnerable adults.</span></div><div class="contact-actions" aria-label="Oregon abuse reporting contact options"><a class="act call" href="tel:8555037233" aria-label="Call — Child, elder, or vulnerable adult abuse">Call</a></div></div>
+        <div class="row"><div class="rl"><h3>Domestic violence (national line)</h3><span>National Domestic Violence Hotline: call <b>800-799-7233</b> or text <b>START to 88788</b>. Trained advocates answer 24/7.</span></div><div class="contact-actions" aria-label="National Domestic Violence Hotline contact options"><a class="act call" href="tel:8007997233" aria-label="Call — Domestic violence (national line)">Call</a><a class="act text" href="sms:88788?body=START" aria-label="Text — Domestic violence (national line)">Text</a></div></div>
+        <div class="row"><div class="rl"><h3>Human trafficking</h3><span>National Human Trafficking Hotline: call <b>888-373-7888</b> or text <b>233733</b>. Available 24/7.</span></div><div class="contact-actions" aria-label="Human Trafficking Hotline contact options"><a class="act call" href="tel:8883737888" aria-label="Call — Human trafficking">Call</a><a class="act text" href="sms:233733" aria-label="Text — Human trafficking">Text</a></div></div>
       </div>
     </details>
     <details class="card resource-group jump-target" id="crisis-hospital">
@@ -533,36 +571,65 @@ footer a{color:var(--teal-d)}
           <p>Secure inpatient behavioral health care in Coos Bay. Bay Area Hospital publishes <a href="tel:5412698401"><b>541-269-8401</b></a> for Acute Psychiatric Services; hospital main line <a href="tel:5412698111">541-269-8111</a>. No one is denied care for inability to pay. · 1775 Thompson Rd</p>
           <p class="note">After a crisis: the county has short-stay crisis respite beds (about 5–7 days) — referral comes through Coos Health &amp; Wellness or the hospital, so ask before discharge.</p>
         </div>
-        <div class="panel warn"><p><b>Withdrawal warning:</b> quitting alcohol or benzodiazepines suddenly can be medically dangerous. Get medical help rather than detoxing alone — Adapt's medical detox: <a href="tel:5414920222"><b>541-492-0222</b></a>. Active overdose: 911.</p></div>
+        <div class="panel warn" role="note" aria-labelledby="warn-detox"><h3 id="warn-detox">Withdrawal can be medically dangerous</h3><p>Quitting alcohol or benzodiazepines suddenly can be medically dangerous. Get medical help rather than detoxing alone — Adapt's medical detox: <a href="tel:5414920222"><b>541-492-0222</b></a>. Active overdose: 911.</p></div>
       </div>
     </details>
   </div>
 
   <div class="subview" id="now-talk">
+    <h2 class="subview-title">Talk to someone today</h2>
     <div class="panel tint">
       <h3>Walk in, no appointment</h3>
       <p><b>Coos Health &amp; Wellness</b> gives a first visit to everyone who asks. Walk in Monday–Friday, 8:00–4:30, at 281 LaClair Street, Coos Bay — or call <a href="tel:5412666700"><b>541-266-6700</b></a>. Takes OHP and most insurance; sliding fee if you have none.</p>
     </div>
     <h2 class="sec">Free listening lines, 24/7</h2>
-    <div class="row"><div class="rl"><b>Oregon Warmline</b><span>Call <b>800-698-2392</b> for peer support. No crisis required and no sign-up.</span></div><div class="contact-actions" aria-label="Oregon Warmline contact options"><a class="act call" href="tel:8006982392">Call</a></div></div>
-    <div class="row"><div class="rl"><b>988</b><span>Call or text <b>988</b> — reaches Oregon's 988 crisis center. Any struggle counts; you don't have to be suicidal.</span></div><div class="contact-actions" aria-label="988 contact options"><a class="act call" href="tel:988">Call</a><a class="act text" href="sms:988">Text</a></div></div>
-    <div class="row"><div class="rl"><b>211</b><span>Call <b>211</b> for help finding local services. Interpreters are available.</span></div><div class="contact-actions" aria-label="211 contact options"><a class="act call" href="tel:211">Call</a></div></div>
+    <p class="tapnote">A person to talk with right now, at no cost. A crisis is never required.</p>
+    <div class="row"><div class="rl"><h3>Oregon Warmline</h3><span>Call <b>800-698-2392</b> for peer support. No crisis required and no sign-up.</span></div><div class="contact-actions" aria-label="Oregon Warmline contact options"><a class="act call" href="tel:8006982392" aria-label="Call — Oregon Warmline">Call</a></div></div>
+    <div class="row"><div class="rl"><h3>988</h3><span>Call or text <b>988</b> — reaches Oregon's 988 crisis center. Any struggle counts; you don't have to be suicidal.</span></div><div class="contact-actions" aria-label="988 contact options"><a class="act call" href="tel:988" aria-label="Call — 988">Call</a><a class="act text" href="sms:988" aria-label="Text — 988">Text</a></div></div>
+    <div class="row"><div class="rl"><h3>211</h3><span>Call <b>211</b> for help finding local services. Interpreters are available.</span></div><div class="contact-actions" aria-label="211 contact options"><a class="act call" href="tel:211" aria-label="Call — 211">Call</a></div></div>
     <div class="next"><a href="#care/therapy">Ready for ongoing therapy →</a></div>
   </div>
 
   <div class="subview" id="now-situations">
+    <h2 class="subview-title">Help for specific situations</h2>
     <p class="tapnote">These lines and programs are built for particular situations. All are free unless noted.</p>
-    <div class="row"><div class="rl"><b>Drinking or drugs</b><span>SAMHSA National Helpline: <b>800-662-4357</b>, free confidential treatment referrals 24/7. For local treatment, call Adapt at 541-751-0357.</span></div><div class="contact-actions"><a class="act call" href="tel:8006624357">Call</a></div></div>
-    <div class="row"><div class="rl"><b>Veteran or military family</b><span>Military Helpline: <b>888-457-4838</b>, 24/7. Veterans Crisis Line: call 988 then press 1, or text <b>838255</b>.</span></div><div class="contact-actions"><a class="act call" href="tel:8884574838">Call</a><a class="act text" href="sms:838255">Text</a></div></div>
-    <div class="row"><div class="rl"><b>Age 24 or younger</b><span>YouthLine: call <b>877-968-8491</b> or text <b>teen2teen to 839863</b>. Teen volunteers answer 4–10pm daily; adults answer other hours.</span></div><div class="contact-actions"><a class="act call" href="tel:8779688491">Call</a><a class="act text" href="sms:839863?body=teen2teen">Text</a></div></div>
-    <div class="row"><div class="rl"><b>Pregnant or new parent</b><span>National Maternal Mental Health Hotline: call or text <b>833-852-6262</b>. Pregnancy and postpartum counselors answer 24/7.</span></div><div class="contact-actions"><a class="act call" href="tel:8338526262">Call</a><a class="act text" href="sms:8338526262">Text</a></div></div>
-    <div class="row"><div class="rl"><b>Age 60+ and feeling alone</b><span>Senior Loneliness Line: <b>800-282-7035</b>. Trained volunteers for Oregonians 60+, 24/7.</span></div><div class="contact-actions"><a class="act call" href="tel:8002827035">Call</a></div></div>
-    <div class="row"><div class="rl"><b>LGBTQ+ young person</b><span>The Trevor Project: call <b>866-488-7386</b> or text <b>START to 678-678</b>. Available 24/7.</span></div><div class="contact-actions"><a class="act call" href="tel:8664887386">Call</a><a class="act text" href="sms:678678?body=START">Text</a></div></div>
-    <div class="row"><div class="rl"><b>Trans or questioning</b><span>Trans Lifeline: <b>877-565-8860</b>. Peer-run support staffed by trans people; weekdays 10–6 Pacific.</span></div><div class="contact-actions"><a class="act call" href="tel:8775658860">Call</a></div></div>
-    <div class="row"><div class="rl"><b>Gambling</b><span>Oregon Problem Gambling Resource: <b>877-695-4648</b> (877-MY-LIMIT). Certified counselors answer 24/7; treatment is free for Oregonians.</span></div><div class="contact-actions"><a class="act call" href="tel:8776954648">Call</a></div></div>
-    <div class="row"><div class="rl"><b>Eating disorders</b><span>National Alliance for Eating Disorders: <b>866-662-1235</b>. Answered by licensed eating-disorder-specialized therapists; weekdays 9–7 Eastern.</span></div><div class="contact-actions"><a class="act call" href="tel:8666621235">Call</a></div></div>
-    <div class="row"><div class="rl"><b>After a disaster</b><span>SAMHSA Disaster Distress Helpline: call or text <b>800-985-5990</b>. Crisis counseling after fire, flood, earthquake, and other disasters; 24/7.</span></div><div class="contact-actions"><a class="act call" href="tel:8009855990">Call</a><a class="act text" href="sms:8009855990">Text</a></div></div>
-    <div class="row"><div class="rl"><b>Family support groups</b><span>NAMI Coos Curry: call or text <b>541-435-1116</b>. Free online groups: Mondays 5:30–7pm (peers) · 3rd Wednesday 6–7:30pm (families).</span></div><div class="contact-actions"><a class="act call" href="tel:5414351116">Call</a><a class="act text" href="sms:5414351116">Text</a></div></div>
+    <h3 class="tri-cap">Substance use &amp; recovery</h3>
+    <div class="row"><div class="rl"><h4>Drinking or drugs</h4><span>SAMHSA National Helpline: <b>800-662-4357</b>, free confidential treatment referrals 24/7. For local treatment, call Adapt at 541-751-0357. Free weekly peer meetings are in the next card down.</span></div><div class="contact-actions"><a class="act call" href="tel:8006624357" aria-label="Call — Drinking or drugs">Call</a></div></div>
+    <details class="card resource-group jump-target" id="recovery-meetings">
+      <summary><span class="ct">Recovery meetings — AA, NA &amp; Al-Anon</span><span class="cs">Free peer support meetings run every week across Coos County. The finders and hotlines here always have the current schedule.</span></summary>
+      <div class="cb">
+        <div class="row"><div class="rl"><h4>Alcoholics Anonymous (AA)</h4><span>Find current local meetings at <a href="https://www.aa.org/find-aa" target="_blank" rel="noopener">aa.org/find-aa</a> or with the free Meeting Guide phone app. To talk to a person first, the local AA District 8 line (Coos Bay · North Bend · Lakeside · Reedsport) answers 24 hours at <b>541-269-3265</b> and can tell you when and where the next meeting is. Bandon: 541-347-1720 · Coquille: 541-396-3965.</span></div><div class="contact-actions" aria-label="AA contact options"><a class="act call" href="tel:5412693265" aria-label="Call — Alcoholics Anonymous (AA)">Call</a></div></div>
+        <div class="row"><div class="rl"><h4>Narcotics Anonymous (NA)</h4><span>Find meetings at <a href="https://www.na.org/meetingsearch/" target="_blank" rel="noopener">na.org</a> or through the Southern Oregon Coast Area NA site, <a href="https://southernoregoncoastna.org" target="_blank" rel="noopener">southernoregoncoastna.org</a>, which covers Coos Bay, North Bend, and Bandon. Their helpline, <b>541-267-0273</b>, can tell you where the next meeting is.</span></div><div class="contact-actions" aria-label="NA contact options"><a class="act call" href="tel:5412670273" aria-label="Call — Narcotics Anonymous (NA)">Call</a></div></div>
+        <div class="row"><div class="rl"><h4>Al-Anon — for family &amp; friends</h4><span>Al-Anon is for the people around the drinker, whether or not the drinker ever goes to anything. Find current Coos County meetings at <a href="https://www.oregonal-anon.org/find-a-meeting" target="_blank" rel="noopener">oregonal-anon.org</a> or <a href="https://al-anon.org/al-anon-meetings/find-an-al-anon-meeting/" target="_blank" rel="noopener">al-anon.org</a>; if no local time works, online meetings run every day through the al-anon.org finder.</span></div></div>
+        <p class="note">Meeting days and rooms change often, so check the finders or call rather than trusting an old printed schedule. Links and numbers checked August 20, 2026 (aa-oregon.org, southernoregoncoastna.org, oregonal-anon.org).</p>
+      </div>
+    </details>
+    <h3 class="tri-cap">Veterans &amp; military families</h3>
+    <div class="row"><div class="rl"><h4>Veteran or military family</h4><span>Military Helpline: <b>888-457-4838</b>, 24/7. Veterans Crisis Line: call 988 then press 1, or text <b>838255</b>.</span></div><div class="contact-actions"><a class="act call" href="tel:8884574838" aria-label="Call — Veteran or military family">Call</a><a class="act text" href="sms:838255" aria-label="Text — Veteran or military family">Text</a></div></div>
+    <h3 class="tri-cap">Age &amp; life stage</h3>
+    <div class="row"><div class="rl"><h4>Age 24 or younger</h4><span>YouthLine: call <b>877-968-8491</b> or text <b>teen2teen to 839863</b>. Teen volunteers answer 4–10pm daily; adults answer other hours.</span></div><div class="contact-actions"><a class="act call" href="tel:8779688491" aria-label="Call — Age 24 or younger">Call</a><a class="act text" href="sms:839863?body=teen2teen" aria-label="Text — Age 24 or younger">Text</a></div></div>
+    <div class="row"><div class="rl"><h4>Pregnant or new parent</h4><span>National Maternal Mental Health Hotline: call or text <b>833-852-6262</b>. Pregnancy and postpartum counselors answer 24/7.</span></div><div class="contact-actions"><a class="act call" href="tel:8338526262" aria-label="Call — Pregnant or new parent">Call</a><a class="act text" href="sms:8338526262" aria-label="Text — Pregnant or new parent">Text</a></div></div>
+    <div class="row"><div class="rl"><h4>Age 60+ and feeling alone</h4><span>Senior Loneliness Line: <b>800-282-7035</b>. Trained volunteers for Oregonians 60+, 24/7.</span></div><div class="contact-actions"><a class="act call" href="tel:8002827035" aria-label="Call — Age 60+ and feeling alone">Call</a></div></div>
+    <h3 class="tri-cap">LGBTQ+ &amp; identity-specific support</h3>
+    <div class="row"><div class="rl"><h4>LGBTQ+ young person</h4><span>The Trevor Project: call <b>866-488-7386</b> or text <b>START to 678-678</b>. Available 24/7.</span></div><div class="contact-actions"><a class="act call" href="tel:8664887386" aria-label="Call — LGBTQ+ young person">Call</a><a class="act text" href="sms:678678?body=START" aria-label="Text — LGBTQ+ young person">Text</a></div></div>
+    <div class="row"><div class="rl"><h4>Trans or questioning</h4><span>Trans Lifeline: <b>877-565-8860</b>. Peer-run support staffed by trans people; weekdays 10–6 Pacific.</span></div><div class="contact-actions"><a class="act call" href="tel:8775658860" aria-label="Call — Trans or questioning">Call</a></div></div>
+    <h3 class="tri-cap">Gambling, eating disorders &amp; disasters</h3>
+    <div class="row"><div class="rl"><h4>Gambling</h4><span>Oregon Problem Gambling Resource: <b>877-695-4648</b> (877-MY-LIMIT). Certified counselors answer 24/7; treatment is free for Oregonians.</span></div><div class="contact-actions"><a class="act call" href="tel:8776954648" aria-label="Call — Gambling">Call</a></div></div>
+    <div class="row"><div class="rl"><h4>Eating disorders</h4><span>National Alliance for Eating Disorders: <b>866-662-1235</b>. Answered by licensed eating-disorder-specialized therapists; weekdays 9–7 Eastern.</span></div><div class="contact-actions"><a class="act call" href="tel:8666621235" aria-label="Call — Eating disorders">Call</a></div></div>
+    <div class="row"><div class="rl"><h4>After a disaster</h4><span>SAMHSA Disaster Distress Helpline: call or text <b>800-985-5990</b>. Crisis counseling after fire, flood, earthquake, and other disasters; 24/7.</span></div><div class="contact-actions"><a class="act call" href="tel:8009855990" aria-label="Call — After a disaster">Call</a><a class="act text" href="sms:8009855990" aria-label="Text — After a disaster">Text</a></div></div>
+    <h3 class="tri-cap">Family support</h3>
+    <div class="row"><div class="rl"><h4>Family support groups</h4><span>NAMI Coos Curry: call or text <b>541-435-1116</b>. Free online groups: Mondays 5:30–7pm (peers) · 3rd Wednesday 6–7:30pm (families).</span></div><div class="contact-actions"><a class="act call" href="tel:5414351116" aria-label="Call — Family support groups">Call</a><a class="act text" href="sms:5414351116" aria-label="Text — Family support groups">Text</a></div></div>
+  </div>
+
+  <div class="subview" id="now-basics">
+    <h2 class="subview-title">Food, housing, and bill emergencies</h2>
+    <p class="tapnote">An empty fridge, a shut-off notice, or nowhere to sleep weighs on mental health as much as anything else here. These services are free — and 211 can connect you to every one of them.</p>
+    <div class="row"><div class="rl"><div class="ptype">Any need — start here</div><h3>211info</h3><span>Call <b>211</b> (or 866-698-6155) between 8am and 6pm any day, or text your ZIP code to <b>898211</b>. A person searches current local openings — food, shelter, utility help, child care — with you, and interpreters are available. Shelter beds change daily, so 211 always has today's list. <span class="note">Source: 211info.org · checked Aug 21, 2026.</span></span></div><div class="contact-actions" aria-label="211 contact options"><a class="act call" href="tel:211" aria-label="Call — 211info">Call</a><a class="act text" href="sms:898211" aria-label="Text — 211info">Text</a></div></div>
+    <div class="row"><div class="rl"><div class="ptype">Regional food bank — Coos &amp; Curry</div><h3>ORCCA · South Coast Food Share</h3><span>Call <b>541-435-7754</b> and they tell you which of their 34 partner pantries near you is open this week; their office is at 1855 Thomas Ave, Coos Bay. ORCCA also runs utility and energy assistance, rental and housing help, and veteran family services — say what's going on and ask which program fits. <span class="note">Source: orcca.us · checked Aug 21, 2026.</span></span></div><div class="contact-actions" aria-label="ORCCA contact options"><a class="act call" href="tel:5414357754" aria-label="Call — ORCCA · South Coast Food Share">Call</a><a class="act" href="https://www.orcca.us" target="_blank" rel="noopener">Website</a></div></div>
+    <div class="row"><div class="rl"><div class="ptype">Statewide pantry search</div><h3>Oregon Food Finder</h3><span>Enter your town and it lists every nearby food pantry and free-meal site with days and hours — run by Oregon Food Bank. <span class="note">Source: foodfinder.oregonfoodbank.org · checked Aug 21, 2026.</span></span></div><div class="contact-actions" aria-label="Oregon Food Finder link"><a class="act" href="https://foodfinder.oregonfoodbank.org" target="_blank" rel="noopener">Open finder</a></div></div>
+    <div class="row"><div class="rl"><div class="ptype">Every other program, by ZIP code</div><h3>findhelp.org</h3><span>Type your ZIP code and it lists assistance programs — rent, bills, transportation, diapers, child care — each with how to apply. <span class="note">Source: findhelp.org · checked Aug 21, 2026.</span></span></div><div class="contact-actions" aria-label="findhelp link"><a class="act" href="https://www.findhelp.org" target="_blank" rel="noopener">Open site</a></div></div>
+    <div class="row"><div class="rl"><div class="ptype">Leaving domestic violence</div><h3>SAFE Project — confidential shelter</h3><span>Call <b>541-756-7000</b>, 24/7 — an advocate answers and can arrange confidential emergency shelter and safety planning for Coos &amp; Curry counties. More urgent-situation lines are on the <a href="#now/crisis">Crisis tab</a>. <span class="note">Source: thesafeproject.net · verified Aug 10, 2026.</span></span></div><div class="contact-actions" aria-label="SAFE Project contact options"><a class="act call" href="tel:5417567000" aria-label="Call — SAFE Project — confidential shelter">Call</a><a class="act text" href="sms:5417567000?body=SAFE" aria-label="Text — SAFE Project — confidential shelter">Text</a></div></div>
+    <div class="next"><a href="#info/costs">Apply for OHP &amp; cost help →</a><a href="#now/crisis">Crisis lines →</a></div>
   </div>
 </section>
 
@@ -580,45 +647,54 @@ footer a{color:var(--teal-d)}
   </div>
 
   <div class="subview on" id="care-start">
+    <h2 class="subview-title">Choose what fits your situation</h2>
     <p class="tapnote">Pick the sentence closest to what's going on. There's no wrong door.</p>
     <div class="triage">
+      <h3 class="tri-cap">Urgent safety</h3>
       <a class="urgent" href="#now/crisis">"I don't want to be here anymore." <small>Thoughts of ending it → crisis lines. You can call 988 right now.</small></a>
       <a class="urgent" href="#now/crisis">"Someone hurt me, or I'm scared of someone at home." <small>→ The SAFE Project hotline is 24/7 and confidential.</small></a>
+      <h3 class="tri-cap">Symptoms &amp; getting treatment</h3>
       <a href="#now/talk">"I just need to talk to someone soon." <small>→ Walk-in visits and free 24/7 listening lines.</small></a>
       <a href="#care/therapy">"I'm anxious all the time, I can't sleep, I can't settle down." <small>→ Therapy. This is exactly what counselors work on.</small></a>
       <a href="#care/therapy">"I've felt down for weeks. Nothing feels good anymore." <small>→ Therapy — and read Medication too; the combination often works best.</small></a>
       <a href="#now/situations">"I'm drinking or using more than I want to." <small>→ Local treatment and free 24/7 helplines, no judgment.</small></a>
-      <a href="#care/therapy">"My kid is struggling." <small>→ Therapy. Child therapists and youth programs are marked.</small></a>
-      <a href="#care/medication">"I keep hearing or seeing things others don't." <small>→ Medication. Ages 12–30 and new? Ask about EASA — early help matters.</small></a>
+      <a href="#care/directory/kids">"My kid is struggling." <small>→ Every kids-and-teens provider in one list: therapy, youth psychiatry, autism therapy, and school programs.</small></a>
+      <a href="#care/medication">"I keep hearing or seeing things others don't." <small>→ Medication. Ages 15–25 and new? Ask about EASA — early help matters.</small></a>
+      <h3 class="tri-cap">Cost &amp; access</h3>
       <a href="#info">"I can't afford any of this." <small>→ Costs &amp; info. OHP has no copay, and several providers turn no one away.</small></a>
     </div>
   </div>
 
   <div class="subview" id="care-therapy">
+    <h2 class="subview-title">Talk therapy</h2>
     <div class="panel tint"><p><b>Call and ask three things:</b> Are you taking new patients? Do you take my insurance? How long is the wait? Availability changes faster than any website. <span class="note">A <button class="term" data-role="counselor">counselor</button>, <button class="term" data-role="lcsw">social worker</button>, or <button class="term" data-role="psychologist">psychologist</button> all provide talk therapy — tap a title for plain English.</span></p></div>
     <nav class="jumprow" aria-label="In this section"><span class="jumplabel">On this page:</span><button type="button" class="jumplink" data-target="sec-clinics">Clinics &amp; health centers</button><button type="button" class="jumplink" data-target="sec-private">Independent therapists</button></nav>
     <h2 class="sec jump-target" id="sec-clinics">Clinics &amp; health centers</h2>
-    <p class="tapnote">Tap any card for locations, hours, insurance, and contacts.</p>
+    <p class="tapnote">Call and website buttons sit on every card. Open "More details" for locations, hours, insurance, and cost.</p>
     <div id="therapy-clinics"></div>
     <h2 class="sec jump-target" id="sec-private">Independent &amp; private-practice therapists</h2>
     <p class="tapnote">From the local Coos &amp; Curry Hub directory — insurance is self-reported, always confirm.</p>
     <div id="therapy-private"></div>
-    <div class="next"><a href="#care/directory">Search and filter all providers →</a></div>
+    <div class="next"><a href="#care/directory/kids">Just the kids &amp; teens providers →</a><a href="#care/directory">Search and filter all providers →</a></div>
   </div>
 
   <div class="subview" id="care-medication">
+    <h2 class="subview-title">Medication: where to start</h2>
     <p class="tapnote">Medication for depression, anxiety, ADHD, bipolar disorder, psychosis, and more. Prescribers are the county's scarcest resource — expect a wait.</p>
     <div class="panel tint"><h3>The shortcut most people miss</h3><p>Your regular doctor or nurse practitioner can start and manage many mental health medications now. Ask them first, then transfer to a <button class="term" data-role="psychiatrist">psychiatrist</button> or <button class="term" data-role="pmhnp">psychiatric nurse practitioner</button> if needed.</p></div>
-    <div class="panel warn"><p><b>Already taking a psychiatric medication?</b> Never stop it suddenly on your own — some are dangerous to quit cold. If cost or side effects are the problem, tell a provider; there is almost always another option.</p></div>
+    <div class="panel warn" role="note" aria-labelledby="warn-meds"><h3 id="warn-meds">Already taking a psychiatric medication?</h3><p>Never stop it suddenly on your own — some are dangerous to quit cold. If cost or side effects are the problem, tell a provider; there is almost always another option.</p></div>
     <h2 class="sec">Local prescribing services</h2>
+    <p class="tapnote">Places where a psychiatrist or psychiatric nurse practitioner can evaluate you and manage medication.</p>
     <div id="meds-list"></div>
-    <div class="panel"><h3>Ages 12–30: first time experiencing psychosis?</h3><p>Hearing voices, losing touch with reality, frightening thoughts — for the first time? Ask for the <b>EASA program</b> at Coos Health &amp; Wellness (<a href="tel:5412666700">541-266-6700</a>). Early help changes long-term outcomes.</p></div>
+    <div class="panel"><h3>Ages 15–25: first time experiencing psychosis?</h3><p>Hearing voices, losing touch with reality, frightening thoughts — for the first time? Ask for the <b>EASA program</b> at Coos Health &amp; Wellness (<a href="tel:5412666700">541-266-6700</a>). Early help changes long-term outcomes.</p><p class="note">Age range per the Coos Health &amp; Wellness EASA page · checked August 21, 2026. Close to the cutoff? Call anyway — they'll point you right.</p></div>
     <div class="next"><a href="#care/directory">Compare all prescribing options →</a></div>
   </div>
 
   <div class="subview" id="care-telehealth">
+    <h2 class="subview-title">Video visits</h2>
     <div class="panel tint"><h3>Best first stops</h3><p><b>Start with local therapists who work by video</b> — the telehealth-only therapists listed below, plus many of the in-person independents under Talk therapy also offer video sessions.</p><p><b>Then try treatmentaccessline.org</b>, Oregon's official treatment search. You can filter by Coos County, telehealth, and your insurance, including OHP. Their help line is <a href="tel:8009234357"><b>800-923-4357</b></a> if you'd rather have a person search with you.</p></div>
     <h2 class="sec">Local telehealth-only therapists</h2>
+    <p class="tapnote">Licensed Oregon therapists who see clients by video only — no office visit involved.</p>
     <div id="virtual-list"></div>
     <h2 class="sec">National apps — the honest version</h2>
     <div class="panel">
@@ -627,10 +703,20 @@ footer a{color:var(--teal-d)}
       <p><b>Commercial insurance through work:</b> platforms like Rula and Headway may work — or just use a local telehealth therapist above.</p>
       <p class="note">Coastal reality: video needs decent internet. If yours is unreliable, ask about phone-only sessions.</p>
     </div>
+    <h2 class="sec">Good tools online</h2>
+    <p class="tapnote">Reputable self-checks, plain-language education, and directories to use between appointments.</p>
+    <div class="panel">
+      <p><b>Wondering if what you're feeling is depression or anxiety?</b> The free screening tools at <a href="https://screening.mhanational.org" target="_blank" rel="noopener">screening.mhanational.org</a> (Mental Health America) are anonymous, clinically validated self-tests that take about 5 minutes, no sign-up. The results page explains what your score suggests and what kind of help fits — a screen points the way; only a provider can diagnose.</p>
+      <p><b>Want to understand a condition in plain words?</b> <a href="https://www.nami.org" target="_blank" rel="noopener">nami.org</a> (National Alliance on Mental Illness) explains conditions and treatments for patients and families, and <a href="https://www.nimh.nih.gov" target="_blank" rel="noopener">nimh.nih.gov</a> (the National Institute of Mental Health) carries the research-backed version of the same topics.</p>
+      <p><b>PTSD Coach</b> is a free, evidence-based app from the U.S. Department of Veterans Affairs with symptom tracking and coping tools you can use between appointments — built for veterans and service members and open to anyone, first responders included. Search "PTSD Coach" in your phone's app store.</p>
+      <p><b>Psychology Today's therapist finder</b> (<a href="https://www.psychologytoday.com/us/therapists" target="_blank" rel="noopener">psychologytoday.com</a>) is the biggest national directory, searchable by insurance and by telehealth. Profiles are self-written, so confirm Oregon licensure and your insurance when you call.</p>
+      <p class="note">Checked August 21, 2026.</p>
+    </div>
     <div class="next"><a href="#care/directory">Search all providers with filters →</a></div>
   </div>
 
   <div class="subview" id="care-directory">
+    <h2 class="subview-title">Search all providers</h2>
     <div class="directory-tools">
       <label class="search-label" for="dirSearch">Search providers</label>
       <div class="search-wrap"><input class="search" id="dirSearch" type="search" placeholder="Name, town, OHP, specialty, service…" aria-label="Search providers"><button type="button" class="clear-search" id="clearSearch" aria-label="Clear provider search">Clear search</button></div>
@@ -650,18 +736,18 @@ footer a{color:var(--teal-d)}
   <span class="subnav-label" id="lbl-helpers">Choose your role</span>
   <div class="subnav" data-group="helpers" aria-describedby="lbl-helpers">
     <button data-s="family" class="on">Family &amp; friends</button>
-    <button data-s="pros">Clinicians &amp; EMS</button>
     <button data-s="kids">Teachers &amp; youth</button>
+    <button data-s="pros">Clinicians &amp; EMS</button>
   </div>
 
   <div class="subview on" id="helpers-family">
     <div class="aud aud-fam">
-      <div class="audhead"><b>You're worried about someone you love</b><span>What you can do, starting tonight.</span></div>
+      <div class="audhead"><h2>You're worried about someone you love</h2><span>What you can do, starting tonight.</span></div>
       <div class="audbody">
         <nav class="jumprow" style="margin:14px 0 4px" aria-label="In this section"><span class="jumplabel">Further down this page:</span><button type="button" class="jumplink" data-target="fam-ask">How to ask about suicide</button><button type="button" class="jumplink" data-target="fam-refuse">If they refuse help</button></nav>
-        <div class="minirow"><div class="mr-l"><b>Ask for coaching, any hour</b><span>Call <b>988</b> or the local crisis team at <b>541-266-6800</b>. Both take calls about someone else.</span></div><div class="mini-actions"><a class="mr-call" href="tel:988">Call 988</a><a class="mr-text" href="tel:5412666800">Call local</a></div></div>
-        <div class="minirow"><div class="mr-l"><b>Go with them</b><span>Coos Health &amp; Wellness takes walk-ins M–F 8:00–4:30 at 281 LaClair St. Going with them is often the difference between an appointment kept and an appointment skipped.</span></div><div class="mini-actions"><a class="mr-call" href="tel:5412666700">Call</a></div></div>
-        <div class="minirow"><div class="mr-l"><b>Support for you, the helper</b><span>NAMI Coos Curry runs free online support groups: peers meet Mondays 5:30–7pm, and families meet the 3rd Wednesday 6–7:30pm.</span></div><div class="mini-actions"><a class="mr-call" href="tel:5414351116">Call</a><a class="mr-text" href="sms:5414351116">Text</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>Ask for coaching, any hour</h3><span>Call <b>988</b> or the local crisis team at <b>541-266-6800</b>. Both take calls about someone else.</span></div><div class="mini-actions"><a class="mr-call" href="tel:988">Call 988</a><a class="mr-text" href="tel:5412666800">Call local</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>Go with them</h3><span>Coos Health &amp; Wellness takes walk-ins M–F 8:00–4:30 at 281 LaClair St. Going with them is often the difference between an appointment kept and an appointment skipped.</span></div><div class="mini-actions"><a class="mr-call" href="tel:5412666700" aria-label="Call — Go with them">Call</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>Support for you, the helper</h3><span>NAMI Coos Curry runs free online support groups: peers meet Mondays 5:30–7pm, and families meet the 3rd Wednesday 6–7:30pm.</span></div><div class="mini-actions"><a class="mr-call" href="tel:5414351116" aria-label="Call — Support for you, the helper">Call</a><a class="mr-text" href="sms:5414351116" aria-label="Text — Support for you, the helper">Text</a></div></div>
         <details class="card jump-target" id="fam-ask"><summary><span class="ct">How to ask someone if they're thinking about suicide</span></summary><div class="cb">
           <p><b>Ask directly: "Are you thinking about suicide?"</b> Research shows asking does not increase suicidal thoughts or behavior — talking openly may actually reduce them (NIMH).</p>
           <p>The five research-backed steps: <b>Ask</b> plainly and listen without judgment. <b>Be there.</b> <b>Help keep them safe</b> — ask if they have a plan, and put distance between them and anything they could use. <b>Help them connect</b> — call or text 988 together. <b>Follow up</b> — a check-in call in the days after genuinely lowers risk.</p>
@@ -676,13 +762,13 @@ footer a{color:var(--teal-d)}
 
   <div class="subview" id="helpers-pros">
     <div class="aud aud-pro">
-      <div class="audhead"><b>You have a patient in front of you</b><span>Scenario quick reference for EMS, nurses, and first responders — with the Oregon law and protocol links behind each one.</span></div>
+      <div class="audhead"><h2>You have a patient in front of you</h2><span>Scenario quick reference for EMS, nurses, and first responders — with the Oregon law and protocol links behind each one.</span></div>
       <div class="audbody">
         <nav class="jumprow" style="margin:14px 0 4px" aria-label="In this section"><span class="jumplabel">Further down this page:</span><button type="button" class="jumplink" data-target="pros-hipaa">Sharing patient info</button><button type="button" class="jumplink" data-target="pros-workflow">Making referrals stick</button><button type="button" class="jumplink" data-target="pros-protocols">Protocols &amp; legal reference</button></nav>
-        <div class="minirow"><div class="mr-l"><b>Mobile crisis, county-wide</b><span>Call <b>541-266-6800</b> — a Coos Health &amp; Wellness crisis worker answers 24/7. They consult by phone, respond on scene anywhere in the county, assess for hold criteria, and can set up next-day follow-up or crisis respite. Calls from partner agencies get priority, and the same number activates the youth team (MRSS — Mobile Response &amp; Stabilization Services).</span></div><div class="mini-actions"><a class="mr-call" href="tel:5412666800">Call</a></div></div>
-        <div class="minirow"><div class="mr-l"><b>DV/SA advocate to the bedside</b><span>Call SAFE Project at <b>541-756-7000</b> — an advocate answers 24/7 and responds to the ED, a home, or the police station. They give the patient someone to talk to during exams and interviews, then handle safety planning, confidential shelter, and follow-up advocacy after discharge.</span></div><div class="mini-actions"><a class="mr-call" href="tel:5417567000">Call</a><a class="mr-text" href="sms:5417567000?body=SAFE">Text</a></div></div>
-        <div class="minirow"><div class="mr-l"><b>SANE consult (clinicians only)</b><span>Call the Oregon Attorney General's Sexual Assault Task Force at <b>971-433-0133</b> for 24/7 clinician-to-clinician guidance on forensic exams, evidence windows, and SAFE Kits. It is a technical-assistance line for treating staff; survivors should be connected to SAFE Project instead.</span></div><div class="mini-actions"><a class="mr-call" href="tel:9714330133">Call</a></div></div>
-        <div class="minirow"><div class="mr-l"><b>Acute psychiatric services</b><span>Call Bay Area Hospital Acute Psychiatric Services at <b>541-269-8401</b> for bed availability, admission criteria, and transfer coordination to the 13-bed unit. Walk-in psychiatric emergencies enter through the ED; the hospital main line is 541-269-8111.</span></div><div class="mini-actions"><a class="mr-call" href="tel:5412698401">Call</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>Mobile crisis, county-wide</h3><span class="resource-facts"><span><b>Call</b>541-266-6800 — partner-agency calls get priority.</span><span><b>Available</b>24/7, anywhere in the county.</span><span><b>Who answers</b>A Coos Health &amp; Wellness crisis worker.</span><span><b>What they can do</b>Consult by phone, respond on scene, assess for hold criteria, set up next-day follow-up or crisis respite.</span><span><b>Youth response</b>The same number activates MRSS — Mobile Response &amp; Stabilization Services.</span></span></div><div class="mini-actions"><a class="mr-call" href="tel:5412666800" aria-label="Call — Mobile crisis, county-wide">Call</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>DV/SA advocate to the bedside</h3><span class="resource-facts"><span><b>Call</b>SAFE Project, 541-756-7000.</span><span><b>Available</b>24/7.</span><span><b>Where they respond</b>The ED, a home, or the police station.</span><span><b>Who answers</b>A trained advocate.</span><span><b>What they can do</b>Support the patient through exams and interviews, then safety planning, confidential shelter, and follow-up advocacy after discharge.</span></span></div><div class="mini-actions"><a class="mr-call" href="tel:5417567000" aria-label="Call — DV/SA advocate to the bedside">Call</a><a class="mr-text" href="sms:5417567000?body=SAFE" aria-label="Text — DV/SA advocate to the bedside">Text</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>SANE consult (clinicians only)</h3><span class="resource-facts"><span><b>Who it is for</b>Treating clinicians only — a technical-assistance line for staff.</span><span><b>For survivors</b>Never give patients this number; connect them to SAFE Project, 541-756-7000.</span><span><b>Call</b>971-433-0133 — the Oregon Attorney General's Sexual Assault Task Force. Available 24/7.</span><span><b>What you get</b>Clinician-to-clinician guidance on forensic exams, evidence windows, and SAFE Kits.</span></span></div><div class="mini-actions"><a class="mr-call" href="tel:9714330133" aria-label="Call — SANE consult (clinicians only)">Call</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>Acute psychiatric services</h3><span class="resource-facts"><span><b>Call</b>541-269-8401 — Bay Area Hospital Acute Psychiatric Services.</span><span><b>What you get</b>Bed availability, admission criteria, transfer coordination to the 13-bed unit.</span><span><b>Walk-in emergencies</b>Enter through the emergency department.</span><span><b>Hospital main line</b>541-269-8111.</span></span></div><div class="mini-actions"><a class="mr-call" href="tel:5412698401" aria-label="Call — Acute psychiatric services">Call</a></div></div>
 
         <details class="card jump-target" id="pros-hipaa"><summary><span class="ct">Can I share patient information with these services?</span><div class="cs">The HIPAA rules for crisis referrals, in plain language — referrals for care are permitted, and so are imminent-danger calls.</div></summary><div class="cb">
           <p class="sigcap">Referrals for care — yes</p>
@@ -780,11 +866,11 @@ footer a{color:var(--teal-d)}
 
   <div class="subview" id="helpers-kids">
     <div class="aud aud-kid">
-      <div class="audhead"><b>A child you know may need protection or support</b><span>Teachers, coaches, and anyone who works with kids.</span></div>
+      <div class="audhead"><h2>A child you know may need protection or support</h2><span>Teachers, coaches, and anyone who works with kids.</span></div>
       <div class="audbody">
-        <div class="minirow"><div class="mr-l"><b>Report suspected abuse</b><span>Oregon Child Abuse Hotline: <b>855-503-7233</b>, 24/7/365. Immediate danger: 911.</span></div><div class="mini-actions"><a class="mr-call" href="tel:8555037233">Call</a></div></div>
-        <div class="minirow"><div class="mr-l"><b>Kids' HOPE Center</b><span>Coos County's child advocacy center: <b>541-266-8806</b>. Forensic interviews, exams, advocacy; no cost.</span></div><div class="mini-actions"><a class="mr-call" href="tel:5412668806">Call</a></div></div>
-        <div class="minirow"><div class="mr-l"><b>Student struggling, not in danger</b><span>YouthLine: call <b>877-968-8491</b> or text <b>teen2teen to 839863</b>. Teens answer 4–10pm daily.</span></div><div class="mini-actions"><a class="mr-call" href="tel:8779688491">Call</a><a class="mr-text" href="sms:839863?body=teen2teen">Text</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>Report suspected abuse</h3><span>Oregon Child Abuse Hotline: <b>855-503-7233</b>, 24/7/365. Immediate danger: 911.</span></div><div class="mini-actions"><a class="mr-call" href="tel:8555037233" aria-label="Call — Report suspected abuse">Call</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>Kids' HOPE Center</h3><span>Coos County's child advocacy center: <b>541-266-8806</b>. Forensic interviews, exams, advocacy; no cost.</span></div><div class="mini-actions"><a class="mr-call" href="tel:5412668806" aria-label="Call — Kids' HOPE Center">Call</a></div></div>
+        <div class="minirow"><div class="mr-l"><h3>Student struggling, not in danger</h3><span>YouthLine: call <b>877-968-8491</b> or text <b>teen2teen to 839863</b>. Teens answer 4–10pm daily.</span></div><div class="mini-actions"><a class="mr-call" href="tel:8779688491" aria-label="Call — Student struggling, not in danger">Call</a><a class="mr-text" href="sms:839863?body=teen2teen" aria-label="Text — Student struggling, not in danger">Text</a></div></div>
         <details class="card"><summary><span class="ct">Suspected child abuse — who must report, the law, and how</span></summary><div class="cb">
           <p><b>The law:</b> ORS 419B.010 requires any "public or private official" with <b>reasonable cause to believe</b> a child has been abused to report <b>immediately</b>. The reporter list (ORS 419B.005) includes nurses, physicians, EMS providers and firefighters, school employees including higher-ed, therapists, clergy, attorneys, and more. Failure to report is a Class A violation.</p>
           <div class="law"><b>Three things people get wrong:</b> You don't need proof — reasonable suspicion is the standard, and investigating isn't your job. The duty is personal — telling your supervisor does not satisfy it. And it applies even if you learned of the abuse outside your job (ODHS: "regardless of whether or not you gained your knowledge… in your official capacity").</div>
@@ -834,7 +920,7 @@ footer a{color:var(--teal-d)}
   </div>
 
   <div class="subview on" id="info-costs">
-    <span class="subnav-label" style="margin-top:4px">What's your money situation?</span>
+    <h2 class="subview-title">Choose your cost or coverage situation</h2>
     <div class="triage">
       <button type="button" class="jumplink" data-target="cost-uninsured">"I don't have insurance."<small>See what a visit actually costs at each place. For most lower incomes, it's $0–$10 a session at the county clinic.</small></button>
       <button type="button" class="jumplink" data-target="cost-ohp">"I have OHP — or maybe I could get it."<small>Mental health care with no copay. How to enroll, and how to use it here.</small></button>
@@ -844,7 +930,7 @@ footer a{color:var(--teal-d)}
     <h2 class="sec jump-target" id="cost-uninsured">No insurance — what a visit costs at each place</h2>
     <p class="tapnote">These are the local places where mental health care costs the least without insurance. Start at the top — the county clinic is free or nearly free for most people. Tap any place to see what you'd pay and how to set it up.</p>
 
-    <details class="card"><summary><div class="ptype">County mental health clinic — Coos Bay</div><span class="ct">Coos Health &amp; Wellness · counseling &amp; psychiatry, $0–$10 a visit</span><div class="cs">The county's walk-in mental health clinic. Your income sets your fee, and for most lower incomes the fee is $0.</div></summary><div class="cb">
+    <details class="card"><summary><div class="ptype">County mental health clinic — Coos Bay</div><span class="ct">Coos Health &amp; Wellness · counseling &amp; psychiatry, $0–$10 a visit at most lower incomes</span><div class="cs">The county's walk-in mental health clinic. Your income sets your fee, and for most lower incomes the fee is $0.</div></summary><div class="cb">
       <p class="sigcap">What a visit costs at your income</p>
       <ul class="siglist">
         <li>Single person earning under about $1,835 a month — <b>$0</b></li>
@@ -927,11 +1013,13 @@ footer a{color:var(--teal-d)}
   </div>
 
   <div class="subview" id="info-who">
+    <h2 class="subview-title">Provider types in plain language</h2>
     <p class="tapnote">These titles get mixed up constantly. The short version — also available anywhere you see a dotted-underline term.</p>
     <div id="who-inline"></div>
   </div>
 
   <div class="subview" id="info-about">
+    <h2 class="subview-title">About this guide</h2>
     <div class="panel"><h3>About</h3><p>Built by Carson W., RN, as a senior capstone project for the RN-BSN program at Utah Tech University. Every entry is checked against the provider's own website, a government source, the local behavioral health directory, or a direct phone call.</p><p class="note">AI assistance was used in creating this guide.</p></div>
     <div class="panel"><h3>How current is this?</h3><p><b>Full directory review: July 5, 2026.</b> Key public-service entries were rechecked against current official websites on August 10, 2026. Availability and insurance change often — always call ahead. Volatile details should be re-verified by phone twice a year; everything should be re-checked annually.</p></div>
     <div class="panel correction-panel"><h3>Feedback &amp; suggestions</h3>
@@ -959,6 +1047,7 @@ footer a{color:var(--teal-d)}
     <p><b>Coos County Mental Health Guide</b> · Key public services rechecked Aug. 10, 2026 · Full directory review July 5, 2026 · Always call ahead.</p>
     <p>Built by Carson W., RN (Utah Tech University RN-BSN capstone), with AI assistance. Not medical advice. Emergencies: 911. Crisis: 988 or 541-266-6800.</p>
     <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfGnjyrTwJpS9AT7k_kNgvm7daUOuMwmuLZGsSJ_1oG_L3LCw/viewform" target="_blank" rel="noopener">Suggest an edit or send feedback</a> — corrections, missing resources, and ideas all welcome. Please don't include personal health information.</p>
+    <p><a href="#helpers/pros">For clinicians &amp; EMS — protocols, holds &amp; reporting laws</a></p>
   </div>
 </footer>
 
@@ -968,7 +1057,7 @@ const V='Directory reviewed Jul 5, 2026';
 const gm=a=>'https://maps.google.com/?q='+encodeURIComponent(a);
 const PROVIDERS=[
 {type:'Clinic — county mental health',name:'Coos Health & Wellness',cred:'',town:'Coos Bay',kind:'clinic',
- tags:['therapy','meds','crisis','kids','walkin','ohp','sliding'],status:{txt:'First visit for everyone — walk in',cls:'ok'},
+ tags:['therapy','meds','crisis','kids','walkin','ohp','sliding'],ages:'All ages',status:{txt:'First visit for everyone — walk in',cls:'ok'},
  sum:'The county safety net — therapy, psychiatry, crisis services, and youth programs under one roof.',
  phone:'541-266-6700',web:'https://cooshealthandwellness.org',
  locs:[
@@ -977,11 +1066,11 @@ const PROVIDERS=[
  ],
  services:['Individual & family therapy','Psychiatric services','Case management','Youth programs & EASA','Mobile crisis team','Interpreters: Spanish, ASL'],
  ins:['OHP / Advanced Health','Blue Cross','PacificSource','MODA','Providence','Sliding fee','No one turned away'],
- feeChip:'$0–$10/session (sliding)',
+ 
  cost:'Mental health visits cost $0–$10 a session for most incomes under about twice the poverty line, with a $10 minimum for the first visit. Bring proof of income; no one is refused for being unable to pay. Checked Aug 12, 2026.',
  note:'',src:'Provider website',verified:'Verified Aug 10, 2026'},
 {type:'Clinic — community health center',name:'Waterfall Community Health Center',cred:'',town:'Coos Bay & North Bend',kind:'clinic',
- tags:['therapy','meds','kids','ohp','sliding'],status:{txt:'Call to schedule an intake',cls:'ok'},
+ tags:['therapy','meds','kids','ohp','sliding'],ages:'All ages',status:{txt:'Call to schedule an intake',cls:'ok'},
  sum:'Offers counseling for kids and adults, psychiatry, and primary care and dental in one system.',
  phone:'541-435-7000',web:'https://www.wfall.org',email:'info@wfall.org',
  booking:{url:'https://www.wfall.org/resources/patient-forms/new-patient-registration/',label:'New-patient registration'},
@@ -993,8 +1082,18 @@ const PROVIDERS=[
  ins:['OHP / Advanced Health','Medicare','Private insurance','Uninsured welcome','Sliding fee'],
  cost:'Fees are discounted by income and family size for every patient. The amounts aren’t posted, so when you call, ask what your first visit would cost at your income. Checked Aug 12, 2026.',
  note:'',src:'Provider website',verified:'Verified Aug 10, 2026'},
+{type:'Youth program — autism therapy',name:'Starfish Youth Therapy Center',cred:'Waterfall',town:'Coos Bay',kind:'clinic',
+ tags:['kids'],ages:'Ages 3–21 with an autism diagnosis',status:{txt:'Waitlist for all services (per their site)',cls:''},
+ sum:'Waterfall’s therapy center for young people with autism — applied behavior analysis (ABA), occupational therapy, speech-language therapy, and feeding therapy.',
+ phone:'541-751-7948',web:'https://www.wfall.org/starfish/',
+ locs:[{label:'Coos Bay',phone:'541-751-7948',hours:'Hours aren’t published — call to ask',addr:'465 Elrod Ave, Suite 101, Coos Bay, OR 97420'}],
+ services:['ABA (applied behavior analysis)','Occupational therapy','Speech-language therapy','Feeding therapy'],
+ ins:['Coverage differs by plan — staff verify your benefits before intake'],
+ cost:'Coverage depends on your plan. Staff check your benefits and handle prior authorization before the first visit, so ask them what your plan covers when they call you back. Checked Aug 21, 2026.',
+ note:'A referral from a physician starts the process — download the referral form from their site or ask your child’s doctor to send one. Their site currently lists a waitlist for all autism therapy services.',
+ src:'Provider website (wfall.org/starfish)',verified:'Verified Aug 21, 2026'},
 {type:'Clinic — primary care + counseling',name:'North Bend Medical Center',cred:'',town:'4 towns',kind:'clinic',
- tags:['therapy','meds','kids','ohp'],status:{txt:'Accepting new patients',cls:'ok'},
+ tags:['therapy','meds','kids','ohp'],ages:'All ages',status:{txt:'Accepting new patients',cls:'ok'},
  sum:'Houses counselors and a psychiatric nurse practitioner inside a primary care clinic.',
  phone:'541-267-5151',web:'https://www.nbmchealth.com',
  booking:{url:'https://www.nbmchealth.com',label:'MyChart · new patients ext. 1281'},
@@ -1009,7 +1108,7 @@ const PROVIDERS=[
  cost:'Costs aren’t posted. Before booking, ask Patient Access (541-267-5151, ext. 1281) what a self-pay first visit costs, and ask for a written Good Faith Estimate — a price on paper before your visit. Checked Aug 12, 2026.',
  note:'',src:'Provider website',verified:'Verified Aug 10, 2026'},
 {type:'Clinic — mental health + addiction',name:'Adapt Integrated Health Care',cred:'',town:'North Bend · Bandon',kind:'clinic',
- tags:['therapy','addiction','kids','sliding'],status:{txt:'Call to ask about openings',cls:''},
+ tags:['therapy','addiction','kids','sliding'],ages:'Adults & youth',status:{txt:'Call to ask about openings',cls:''},
  sum:'Provides mental health care for adults and youth, plus substance use treatment, opioid treatment, and detox.',
  phone:'541-751-0357',web:'https://adaptoregon.org',
  locs:[
@@ -1036,7 +1135,7 @@ const PROVIDERS=[
  cost:'Care is free for incomes at or below about $2,660 a month for one person, with 75% and 25% discounts at higher incomes. Apply through Patient Financial Services, 541-347-2426. Checked Aug 12, 2026.',
  note:'',src:'Provider website',verified:'Verified Aug 10, 2026'},
 {type:'Tribal health center',name:'Three Rivers Health Center',cred:'CTCLUSI',town:'Coos Bay',kind:'clinic',
- tags:['therapy','meds','kids'],status:{txt:'Open to tribal & non-tribal community members',cls:'ok'},
+ tags:['therapy','meds','kids'],ages:'All ages',status:{txt:'Open to tribal & non-tribal community members',cls:'ok'},
  sum:'Provides therapy for all ages plus psychiatric evaluation and medication management.',
  phone:'541-435-7200',web:'https://threerivers.health',email:'threerivershealth@ctclusi.org',
  booking:{url:'https://threerivers.health',label:'Patient portal & enrollment'},
@@ -1045,7 +1144,7 @@ const PROVIDERS=[
  ins:['Ask when you call'],
  note:'Official site states the health center serves members of federally recognized tribes and non-tribal community members in Southwest Oregon.',src:'Provider website',verified:'Verified Aug 10, 2026'},
 {type:'Tribal health center',name:'Ko-Kwel Wellness Center',cred:'Coquille Indian Tribe',town:'Coos Bay',kind:'clinic',
- tags:['therapy','addiction'],status:{txt:'General public accepted as capacity allows',cls:'ok'},
+ tags:['therapy','addiction'],ages:'Adults, teens & children',status:{txt:'General public accepted as capacity allows',cls:'ok'},
  sum:'Offers counseling, care coordination, TMS, opioid treatment, and medical and dental care.',
  phone:'541-888-9494',web:'https://kokwelwellness.org',email:'wellness@coquilletribe.org',
  locs:[
@@ -1057,14 +1156,14 @@ const PROVIDERS=[
  note:'Serves Coquille Tribal Members, American Indians/Alaska Natives, and current patients; the public is accepted as capacity allows.',
  src:'Provider website',verified:'Verified Aug 10, 2026'},
 {type:'Youth program',name:'KAIROS Coastline',cred:'',town:'Coos Bay',kind:'clinic',
- tags:['therapy','kids','ohp','tele'],status:{txt:'Open access Wed & Fri',cls:'ok'},
+ tags:['therapy','kids','ohp','tele'],ages:'Youth of all ages (outpatient) · 5–11 (day treatment)',status:{txt:'Open access Wed & Fri · OHP only',cls:'ok'},
  sum:'Serves youth only: outpatient therapy, skills coaching, and day treatment for ages 5–11.',
  phone:'541-267-3511',web:'https://kairosnw.org',email:'coastlineservices@kairosnw.org',
  locs:[{label:'Coos Bay outpatient clinic',phone:'541-267-3511',hours:'Open access Wed 8am–3pm · Fri 8am–12pm',addr:'2020 Thompson Rd, Coos Bay, OR 97420'}],
  services:['Outpatient therapy for OHP-covered youth of all ages','In-office, community & telehealth outpatient care','Skills coaching','Peer & family support','Wraparound','Day treatment ages 5–11 (incl. psychiatrist med mgmt)'],
- ins:['OHP / Medicaid for outpatient services'],
+ ins:['OHP / Advanced Health','Other approved payers — ask'],
  cost:'Outpatient care is billed to OHP, so families with OHP pay nothing. Checked Aug 12, 2026.',
- note:'Day Treatment is specifically for ages 5–11; outpatient services accept OHP-covered youth of all ages.',src:'Provider website',verified:'Verified Aug 10, 2026'},
+ note:'KAIROS outpatient serves youth enrolled in the Oregon Health Plan — their site says OHP "or other approved insurance provider." Families with only private insurance usually can\'t use KAIROS: ask when you call whether your plan qualifies, and see Waterfall, Three Rivers, or the therapists tagged Kids & teens for private-insurance options. Checked Aug 21, 2026 (kairosnw.org).',src:'Provider website',verified:'Verified Aug 21, 2026'},
 {type:'Hospital — inpatient & emergency',name:'Bay Area Hospital — Behavioral Health',cred:'',town:'Coos Bay',kind:'clinic',
  tags:['crisis'],status:{txt:'Hospital-level care',cls:''},
  sum:'Runs a 13-bed inpatient psychiatric unit with walk-in psychiatric emergency services.',
@@ -1087,7 +1186,7 @@ const PROVIDERS=[
  note:'Their website contact form is not monitored for urgent help — call the hotline.',
  src:'Provider website',verified:'Verified Aug 10, 2026'},
 {type:'Counselor — talk therapy',name:'Erin Spier',cred:'LPC',practice:'Creative Roots Therapy, LLC',town:'Coos Bay',kind:'private',
- tags:['therapy','private','kids','ohp','tele'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','kids','ohp','tele'],ages:'Ages 6+',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'Works with trauma, ADHD, anxiety, and attachment for ages 6 and up — in person or by video.',
  phone:'541-294-4480',
  locs:[{label:'Coos Bay',phone:'541-294-4480',hours:'Hours aren’t published — call to ask',addr:'375 Park Ave, Coos Bay, OR'}],
@@ -1095,7 +1194,7 @@ const PROVIDERS=[
  ins:['OHP / Advanced Health','Aetna','BCBS','Cigna','Moda','Medicare','PacificSource','Providence','UHC'],
  note:'',src:'Coos & Curry Hub listing'},
 {type:'Counselor — talk therapy',name:'Megan Carr',cred:'LPC',practice:'All Who Wander Counseling',town:'Coos Bay',kind:'private',
- tags:['therapy','private','ohp','sliding','tele','addiction'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','ohp','sliding','tele','addiction'],ages:'Ages 6+',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'Specializes in addiction and in military families, seeing ages 6 and up; video available.',
  phone:'541-696-3454',email:'megan.carr@awwcounseling.com',
  locs:[{label:'Coos Bay',phone:'541-696-3454',hours:'Hours aren’t published — call to ask',addr:'375 Park Ave, Suite 2, Coos Bay, OR 97420'}],
@@ -1103,7 +1202,7 @@ const PROVIDERS=[
  ins:['OHP / Advanced Health','Aetna','Cigna','PacificSource','Providence','UHC','Sliding scale'],
  note:'',src:'Coos & Curry Hub listing'},
 {type:'Counselor — talk therapy',name:'Susan Chappelear',cred:'LPC',practice:'',town:'Coos Bay',kind:'private',
- tags:['therapy','private','ohp','sliding'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','ohp','sliding'],ages:'Ages 13+',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'Takes a holistic, skills-based approach to managing emotions, seeing teens 13 and up through seniors.',
  phone:'541-808-5537',email:'susanclpc@gmail.com',
  locs:[{label:'Coos Bay',phone:'541-808-5537',hours:'Hours aren’t published — call to ask',addr:'375 Park Ave, Suite 2, Coos Bay, OR 97420'}],
@@ -1111,7 +1210,7 @@ const PROVIDERS=[
  ins:['OHP / Advanced Health','Aetna','BCBS','Cigna','Moda','PacificSource','Providence','UHC','Sliding scale'],
  note:'',src:'Coos & Curry Hub listing'},
 {type:'Counselor — talk therapy',name:'Dr. Jinxi Caddel',cred:'PhD, LPC, CADC',practice:'Black Sheep Therapy LLC',town:'Bandon',kind:'private',
- tags:['therapy','private','addiction','ohp','tele'],status:{txt:'Waitlist only (per their site)',cls:''},
+ tags:['therapy','private','addiction','ohp','tele'],ages:'Ages 13+',status:{txt:'Waitlist only (per their site)',cls:''},
  sum:'Certified in ADHD and autism care and trauma-informed, seeing teens 13 and up through seniors.',
  phone:'541-329-9470',email:'jinxi@drjinxi.com',web:'https://www.drjinxi.com',
  locs:[{label:'Bandon',phone:'541-329-9470',hours:'Hours aren’t published — call to ask',addr:'1125 Alabama Ave SE, Bandon, OR 97411'}],
@@ -1120,7 +1219,7 @@ const PROVIDERS=[
  note:'Her own site states the caseload is currently full — waiting list only.',
  src:'Coos & Curry Hub + practice website'},
 {type:'Counselor — talk therapy',name:'Jenni Bray',cred:'LPC',practice:'Jenni Bray Counseling',town:'Bandon',kind:'private',
- tags:['therapy','private','ohp','tele'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','ohp','tele'],ages:'Ages 13+',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'Combines DBT and EMDR for trauma processing, seeing teens 13 and up through seniors; video available.',
  phone:'541-808-4512',email:'jennibraycounseling@gmail.com',
  booking:{url:'https://jennifer-bray.clientsecure.me/',label:'Online booking'},
@@ -1129,7 +1228,7 @@ const PROVIDERS=[
  ins:['OHP / Advanced Health','Other Medicaid CCOs','Aetna','BCBS','Cigna','Moda','PacificSource','Providence','Samaritan'],
  note:'',src:'Coos & Curry Hub listing'},
 {type:'Clinical social worker — talk therapy',name:'Melissa Smith',cred:'LCSW',practice:'Gentle Breeze Counseling',town:'Coquille',kind:'private',
- tags:['therapy','private','kids','ohp'],status:{txt:'Current practice listing — call for availability',cls:'ok'},
+ tags:['therapy','private','kids','ohp'],ages:'Ages 12+',status:{txt:'Current practice listing — call for availability',cls:'ok'},
  sum:'Sees adolescents 12 and up and adults for anxiety, depression, trauma, and stress management, in person.',
  phone:'541-824-0990',web:'https://www.gentlebrz.com',
  locs:[{label:'Coquille',phone:'541-824-0990',hours:'Practice hours M–F 9am–5pm',addr:'222 E 2nd St, Suite 4, Coquille, OR 97423'}],
@@ -1138,7 +1237,7 @@ const PROVIDERS=[
  note:'Melissa Smith is now listed by Gentle Breeze Counseling as an LCSW rather than a supervised associate.',
  src:'Current practice website',verified:'Verified Aug 10, 2026'},
 {type:'Social worker — talk therapy · telehealth only',name:'Dez Dixon',cred:'LCSW',practice:'Optimize Wellness Counseling, LLC',town:'Telehealth (based Coos Bay)',kind:'private',
- tags:['therapy','private','sliding','virtual','tele'],status:{txt:'Accepting — telehealth only (per their site)',cls:'ok'},
+ tags:['therapy','private','sliding','virtual','tele'],ages:'Adults only',status:{txt:'Accepting — telehealth only (per their site)',cls:'ok'},
  sum:'Works with adults using EMDR and IFS, currently by video only.',
  phone:'541-590-2498',web:'https://www.optimizewellnesscounseling.com',
  booking:{url:'https://www.optimizewellnesscounseling.com/sign-in',label:'Client portal'},
@@ -1148,7 +1247,7 @@ const PROVIDERS=[
  note:'OHP not listed.',
  src:'Practice website + Hub listing'},
 {type:'Counselor — couples & family',name:'Noreen Knapp',cred:'LMFT',practice:'Cullenward Knapp Counseling',town:'Coos Bay',kind:'private',
- tags:['therapy','private','kids','ohp'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','kids','ohp'],ages:'All ages',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'A marriage and family therapist with more than 30 years of experience, seeing all ages.',
  phone:'541-217-4203',email:'noirin58@gmail.com',
  locs:[{label:'Coos Bay',phone:'541-217-4203',hours:'Hours aren’t published — call to ask',addr:'180 S Empire Blvd, Coos Bay, OR 97420'}],
@@ -1156,13 +1255,23 @@ const PROVIDERS=[
  ins:['OHP / Advanced Health','Aetna'],
  note:'',src:'Coos & Curry Hub listing'},
 {type:'Counselor — talk therapy',name:'Jennifer von Feldon',cred:'LPC',practice:'von Felden Counseling Services',town:'Coos Bay',kind:'private',
- tags:['therapy','private','ohp','sliding','tele'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','ohp','sliding','tele'],ages:'Ages 18+',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'Sees adults 18 and up, takes OHP, and offers a sliding scale; video available.',
  phone:'541-329-7115',email:'vonfeldencounselingservices@gmail.com',
  locs:[{label:'Coos Bay',phone:'541-329-7115',hours:'Hours aren’t published — call to ask',addr:'320 Central Ave, Suite 512, Coos Bay, OR 97420'}],
  services:['Individual therapy','Group therapy','Adults 18+'],
  ins:['OHP / Advanced Health','Sliding scale for uninsured'],
  note:'',src:'Coos & Curry Hub listing'},
+{type:'Psychiatric nurse practitioner — medication',name:'Jenny Tausch',cred:'PMHNP-BC',practice:'Monarch Mental Health LLC',town:'Coos Bay',kind:'private',
+ tags:['meds','private','ohp','tele'],ages:'Ages 12+',status:{txt:'Not accepting new patients (per their site)',cls:''},
+ sum:'An independent psychiatric nurse practitioner for medication management and brief supportive therapy, in person or by video.',
+ phone:'401-217-9333',email:'jenny@monarchmentalhealthllc.com',web:'https://www.monarchmentalhealth.net',
+ locs:[{label:'Coos Bay office',phone:'401-217-9333',hours:'Hours aren’t published — call or email to ask',addr:'320 Central Ave, Suite 212, Coos Bay, OR 97420'}],
+ services:['Medication management','Brief supportive therapy','Depression, anxiety, ADHD, PTSD, bipolar disorder','In person & video'],
+ ins:['OHP / Advanced Health','Aetna','BCBS','Cigna','Medicare','Moda','PacificSource','Providence','UHC','Can bill out of network'],
+ cost:'Paying yourself, a first appointment runs $100–$300 and follow-ups $50–$100 depending on length, with a prompt-pay discount — ask when you book. Checked Aug 21, 2026.',
+ note:'Their website currently says the schedule is full and new patients aren\'t being accepted — ask about a wait list when you call. Details come from the practice website and Hub listing; not yet confirmed by phone.',
+ src:'Practice website (monarchmentalhealth.net) + Coos & Curry Hub listing',verified:'Verified Aug 21, 2026 — website only, not confirmed by phone'},
 {type:'Therapy group — psychologist & therapists',name:'Coastal Center, LLC',cred:'',practice:'',town:'North Bend',kind:'private',
  tags:['therapy','private','kids'],status:{txt:'Call to ask about openings',cls:''},
  sum:'A group practice since 1981, with a psychologist for testing plus social workers and counselors.',
@@ -1172,7 +1281,7 @@ const PROVIDERS=[
  ins:['Ask — staff panels vary (Aetna, BCBS, Cigna, DMAP, Medicare listed for some)'],
  note:'',src:'Practice website'},
 {type:'Social worker — talk therapy · telehealth only',name:'Lori Wilson',cred:'LCSW, CADC III, MAC',practice:'Journey to Discovery Counseling',town:'Telehealth',kind:'private',
- tags:['therapy','private','virtual','tele','addiction'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','virtual','tele','addiction'],ages:'Ages 6+',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'Works with trauma, complex PTSD, and addiction for ages 6 and up, by video.',
  phone:'541-393-2280',email:'loriwilsonlcsw@journeytodiscoverycounseling.com',
  locs:[{label:'Telehealth',phone:'541-393-2280',hours:'Hours aren’t published — call to ask'}],
@@ -1180,7 +1289,7 @@ const PROVIDERS=[
  ins:['Medicare','Triwest','Wide panel — confirm yours'],
  note:'',src:'Coos & Curry Hub listing'},
 {type:'Counselor — talk therapy · telehealth only',name:'Jennifer Whitted',cred:'LPC',practice:'',town:'Telehealth (based North Bend)',kind:'private',
- tags:['therapy','private','virtual','tele'],status:{txt:'Private pay only — no insurance',cls:''},
+ tags:['therapy','private','virtual','tele'],ages:'Ages 13+',status:{txt:'Private pay only — no insurance',cls:''},
  sum:'An EMDR-certified therapist for psychosis, mood disorders, and trauma, seeing teens 13 and up and adults in Oregon and Texas.',
  phone:'541-325-7106',
  booking:{url:'https://care.tavahealth.com/providers/jennifer-whitted',label:'Book online (Tava Health)'},
@@ -1189,7 +1298,7 @@ const PROVIDERS=[
  ins:['Private pay / flat rate only'],
  note:'',src:'Coos & Curry Hub listing'},
 {type:'Counselor — talk therapy · telehealth only',name:'Andrea Rae Gardner-Young',cred:'LPC',practice:'Private practice',town:'Telehealth (OR & UT)',kind:'private',
- tags:['therapy','private','virtual','tele'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','virtual','tele'],ages:'Adults & seniors',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'Offers CBT, DBT, EMDR, and expressive art therapy to adults and seniors.',
  phone:'541-224-6668',email:'andrea@andreagardneryounglpc.com',
  locs:[{label:'Telehealth',phone:'541-224-6668',hours:'Hours aren’t published — call to ask'}],
@@ -1197,7 +1306,7 @@ const PROVIDERS=[
  ins:['Ask when you call'],
  note:'',src:'Coos & Curry Hub listing'},
 {type:'Counselor (associate) — talk therapy · telehealth only',name:'Jona Dodd',cred:'PCA, MS, NCC',practice:'',town:'Telehealth (based North Bend)',kind:'private',
- tags:['therapy','private','virtual','tele'],status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
+ tags:['therapy','private','virtual','tele'],ages:'Ages 16+',status:{txt:'In the local Hub directory — call to confirm openings',cls:''},
  sum:'A neuro-affirming associate counselor for ADHD, anxiety, and life transitions, ages 16 and up.',
  phone:'541-625-1056',email:'jona@doddintegrativemed.com',
  locs:[{label:'Telehealth',phone:'541-625-1056',hours:'Hours aren’t published — call to ask'}],
@@ -1244,16 +1353,22 @@ document.getElementById('who-panel').innerHTML=rolesHtml();
 document.getElementById('who-inline').innerHTML=rolesHtml().replace(/ id="role-[^"]+"/g,'');
 
 /* ================= card renderer ================= */
-function providerBadges(p){
-  const badges=[];
-  if(p.status&&p.status.txt)badges.push(`<span class="meta-chip${p.status.cls==='ok'?' status-ok':''}">${p.status.txt}</span>`);
-  if(p.town)badges.push(`<span class="meta-chip">${p.town}</span>`);
-  if(p.tags.includes('ohp'))badges.push('<span class="meta-chip">OHP</span>');
-  if(p.feeChip)badges.push(`<span class="meta-chip">${p.feeChip}</span>`);
-  else if(p.tags.includes('sliding'))badges.push('<span class="meta-chip">Sliding fee — ask your price</span>');
-  if(p.tags.includes('kids'))badges.push('<span class="meta-chip">Kids & teens</span>');
-  if(p.tags.includes('tele')||p.tags.includes('virtual'))badges.push('<span class="meta-chip">Video available</span>');
-  return `<div class="card-meta">${badges.slice(0,6).join('')}</div>`;
+function providerFacts(p){
+  const cov=[];
+  if(p.ins.includes('Free'))cov.push('Free');
+  if(p.tags.includes('ohp'))cov.push('Takes OHP');
+  if(p.feeChip)cov.push(p.feeChip);
+  else if(p.tags.includes('sliding'))cov.push('Sliding fee — ask your price');
+  const facts=[
+    ['Openings',p.status&&p.status.txt?p.status.txt:'Call to confirm openings',p.status&&p.status.cls==='ok'?'access':''],
+    ['Cost & coverage',cov.join(' · ')||'Confirm when you call',''],
+    ['Who it serves',p.ages||'Ask when you call',''],
+    ['Location',p.town||'Ask when you call','']
+  ];
+  const fit=[];
+  if(p.tags.includes('tele')||p.tags.includes('virtual'))fit.push('Video available');
+  if(p.tags.includes('kids')&&!/age|child|teen|youth|kids/i.test(p.ages||''))fit.push('Kids & teens');
+  return `<dl class="provider-facts">${facts.map(f=>`<div class="provider-fact ${f[2]}"><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('')}</dl>${fit.length?`<div class="card-meta">${fit.map(x=>`<span class="meta-chip">${x}</span>`).join('')}</div>`:''}`;
 }
 function card(p){
   const nm=p.name+(p.cred?', '+p.cred:'');
@@ -1276,18 +1391,24 @@ function card(p){
   }
   const svc=`<div class="chead">Services</div><div class="chipset">`+p.services.map(s=>`<span class="tagi">${s}</span>`).join('')+`</div>`;
   const ins=`<div class="chead">Insurance (confirm when you call)</div><div class="chipset">`+p.ins.map(i=>`<span class="tagi${/OHP/.test(i)?' ohp':''}">${i}</span>`).join('')+`</div>`;
-  const cost=p.cost?`<div class="chead">Cost &amp; financial help</div><p style="font-size:.9rem;margin:2px 0 0">${p.cost}</p>`:'';
+  let costTxt=p.cost;
+  if(!costTxt&&!p.ins.includes('Free'))costTxt='Costs aren\u2019t published. When you call, ask what a first visit costs with your coverage \u2014 or without it.'+(p.ages?'':' Ask which ages they see, too.');
+  const cost=costTxt?`<div class="chead">Cost &amp; financial help</div><p style="font-size:.95rem;margin:2px 0 0">${costTxt}</p>`:'';
   const note=p.note?`<div class="cnote">${p.note}</div>`:'';
-  return `<details class="card provider-card"><summary>
-    <div class="ptype">${typeHtml}</div>
-    <div class="ct">${nm}</div>
-    <div class="cs">${prac}${p.sum}</div>
-    ${providerBadges(p)}</summary>
+  return `<div class="card provider-card">
+    <div class="phead">
+      <div class="ptype">${typeHtml}</div>
+      <h3 class="ct">${nm}</h3>
+      <div class="cs">${prac}${p.sum}</div>
+      ${providerFacts(p)}
+      <div class="actions">${acts}</div>
+    </div>
+    <details class="pmore"><summary aria-label="More details about ${p.name}: exact locations, hours, services, insurance, and costs">More details: exact locations, hours, services, insurance &amp; costs</summary>
     <div class="cb">
-      <div class="actions">${acts}<span class="hint">Use the options above to contact the provider. Availability and insurance can change.</span></div>
       ${locs}${svc}${ins}${cost}${note}
       <div class="verified">${p.verified||V} · Source: ${p.src}. When you call, ask three things: Are you taking new patients? Do you take my insurance? How long is the wait?</div>
-    </div></details>`;
+    </div></details>
+  </div>`;
 }
 document.getElementById('therapy-clinics').innerHTML=PROVIDERS.filter(p=>p.kind==='clinic'&&p.tags.includes('therapy')).map(card).join('');
 document.getElementById('therapy-private').innerHTML=PROVIDERS.filter(p=>p.kind==='private'&&!p.tags.includes('virtual')).map(card).join('');
@@ -1321,10 +1442,14 @@ function groupMatch(p,g){
   const vals=[...selectedFilters[g.id]];
   return !vals.length||vals.some(id=>optionMatch(p,id));
 }
+/* search synonyms: common variants people type → the word the data actually uses */
+const SYNONYMS={counselling:'counsel',counsellor:'counsel',counselor:'counsel',counseling:'counsel',therapist:'therapy',therapists:'therapy',med:'meds',medication:'meds',medications:'meds',medicine:'meds',prescriber:'meds',psychiatrist:'psychiatr',psychiatry:'psychiatr',child:'kids',children:'kids',kid:'kids',youth:'kids',video:'tele',virtual:'tele',online:'tele',telehealth:'tele',drug:'addiction',drugs:'addiction',alcohol:'addiction',substance:'addiction',rehab:'addiction',recovery:'addiction',medicaid:'ohp'};
 function match(p){
   const filtersOk=FILTER_GROUPS.every(g=>groupMatch(p,g));
-  const text=(p.name+' '+(p.practice||'')+' '+p.town+' '+p.sum+' '+p.services.join(' ')+' '+p.type+' '+(p.cred||'')+' '+p.tags.join(' ')+' '+p.ins.join(' ')+' '+(p.status?.txt||'')+' '+(p.locs||[]).map(L=>(L.label||'')+' '+(L.addr||'')+' '+(L.hours||'')).join(' ')).toLowerCase();
-  return filtersOk&&(!q||text.includes(q));
+  if(!q)return filtersOk;
+  const text=(p.name+' '+(p.practice||'')+' '+p.town+' '+(p.ages||'')+' '+p.sum+' '+p.services.join(' ')+' '+p.type+' '+(p.cred||'')+' '+p.tags.join(' ')+' '+p.ins.join(' ')+' '+(p.status?.txt||'')+' '+(p.locs||[]).map(L=>(L.label||'')+' '+(L.addr||'')+' '+(L.hours||'')).join(' ')).toLowerCase();
+  const terms=q.split(/\s+/).filter(Boolean).map(w=>SYNONYMS[w]||w);
+  return filtersOk&&terms.every(t=>text.includes(t));
 }
 function clearFilters(keepSearch=false){
   Object.values(selectedFilters).forEach(s=>s.clear());
@@ -1337,7 +1462,7 @@ function renderDir(){
   let html='';
   GROUPS.forEach(g=>{
     const list=hits.filter(g.f);
-    if(list.length)html+=`<div class="dirgroup">${g.label}</div>`+list.map(card).join('');
+    if(list.length)html+=`<h2 class="dirgroup">${g.label}</h2>`+list.map(card).join('');
   });
   if(!html)html=`<div class="empty-state"><b>No providers match all of those choices.</b><span>Try clearing one filter, searching a broader term, or viewing telehealth options.</span><div class="empty-actions"><button type="button" id="emptyClear">Clear filters</button><a href="tel:211">Call 211</a></div></div>`;
   document.getElementById('dir-list').innerHTML=html;
@@ -1376,7 +1501,16 @@ function syncClearSearch(){clearSearchBtn.classList.toggle('show',Boolean(docume
 clearSearchBtn.addEventListener('click',()=>{q='';document.getElementById('dirSearch').value='';syncClearSearch();renderDir();document.getElementById('dirSearch').focus();});
 
 /* open provider cards when printing */
-window.addEventListener('beforeprint',()=>{document.querySelectorAll('details.card').forEach(d=>d.setAttribute('open','')); });
+window.addEventListener('beforeprint',()=>{document.querySelectorAll('details.card:not([open]),details.pmore:not([open])').forEach(d=>{d.dataset.printOpened='';d.setAttribute('open','');}); });
+window.addEventListener('afterprint',()=>{document.querySelectorAll('details[data-print-opened]').forEach(d=>{d.removeAttribute('open');delete d.dataset.printOpened;}); });
+
+/* accessible names for repeated Call/Text/Website buttons, from the row's own heading */
+document.querySelectorAll('.row,.minirow').forEach(r=>{
+  const t=r.querySelector('.rl>h3,.rl>h4,.rl>b,.mr-l>h3,.mr-l>b');if(!t)return;
+  r.querySelectorAll('.contact-actions a,.mini-actions a').forEach(a=>{
+    if(!a.getAttribute('aria-label'))a.setAttribute('aria-label',a.textContent.trim()+' — '+t.textContent.trim());
+  });
+});
 
 /* ================= learn slide-over ================= */
 const learnPanel=document.getElementById('learnPanel'),backdrop=document.getElementById('backdrop');
@@ -1386,7 +1520,7 @@ function openLearn(role){
   learnPanel.classList.add('open');backdrop.classList.add('show');learnPanel.setAttribute('aria-hidden','false');
   document.querySelectorAll('header,main,footer,.qexit').forEach(el=>el.inert=true);
   document.getElementById('soClose').focus();
-  if(role){const el=learnPanel.querySelector('#role-'+role);if(el){setTimeout(()=>el.scrollIntoView({block:'center'}),250);el.style.outline='2px solid var(--accent)';setTimeout(()=>el.style.outline='',1800);}}
+  if(role){const el=learnPanel.querySelector('#role-'+role);if(el){setTimeout(()=>el.scrollIntoView({block:'center'}),250);el.style.outline='2px solid var(--teal)';setTimeout(()=>el.style.outline='',1800);}}
 }
 function closeLearn(){
   learnPanel.classList.remove('open');backdrop.classList.remove('show');learnPanel.setAttribute('aria-hidden','true');
@@ -1480,7 +1614,7 @@ document.querySelectorAll('.subnav').forEach(sn=>{
 document.querySelectorAll('.subview').forEach(p=>p.setAttribute('role','tabpanel'));
 
 /* ================= router: #view or #view/sub ================= */
-const VIEWS={home:null,now:['crisis','talk','situations'],care:['start','therapy','medication','telehealth','directory'],helpers:['family','pros','kids'],info:['costs','who','about']};
+const VIEWS={home:null,now:['crisis','talk','situations','basics'],care:['start','therapy','medication','telehealth','directory'],helpers:['family','kids','pros'],info:['costs','who','about']};
 /* legacy hash aliases */
 const ALIAS={crisis:'now/crisis',talk:'now/talk',situations:'now/situations',therapy:'care/therapy',meds:'care/medication',virtual:'care/telehealth',directory:'care/directory',start:'care/start',cost:'info/costs'};
 function setSub(view,sub){
@@ -1492,11 +1626,20 @@ function setSub(view,sub){
 function route(focusHeading=false){
   let h=(location.hash||'#home').slice(1);
   if(ALIAS[h])h=ALIAS[h];
-  const [view,sub]=h.split('/');
+  const [view,sub,preset]=h.split('/');
   const v=VIEWS.hasOwnProperty(view)?view:'home';
   Object.keys(VIEWS).forEach(k=>{const el=document.getElementById(k);if(el)el.classList.toggle('active',k===v);});
   document.querySelectorAll('nav.main a').forEach(a=>a.classList.toggle('active',a.dataset.v===v));
   if(VIEWS[v])setSub(v,sub);
+  if(v==='care'&&sub==='directory'&&preset){
+    const chip=chipsEl.querySelector(`.chip[data-f="${preset}"]`);
+    if(chip){clearFilters();if(!chip.classList.contains('on'))chip.click();}
+  }
+  const TITLES={now:'Help right now',care:'Find ongoing care',helpers:'Help someone else',info:'Cost & insurance'};
+  const SUBTITLES={'now/crisis':'Crisis lines','now/talk':'Talk to someone today','now/situations':'Specific situations','now/basics':'Food, housing & bills','care/start':'Help me choose','care/therapy':'Talk therapy','care/medication':'Medication','care/telehealth':'Video visits','care/directory':'All providers','helpers/family':'Family & friends','helpers/kids':'Teachers & youth','helpers/pros':'Clinicians & EMS','info/costs':'Cost & coverage','info/who':'Provider types','info/about':'About this guide'};
+  const subs=VIEWS[v];const effSub=subs&&subs.includes(sub)?sub:(subs?subs[0]:null);
+  const st=effSub?SUBTITLES[v+'/'+effSub]:null;
+  document.title=st?st+' – Coos County Mental Health Guide':(TITLES[v]?TITLES[v]+' – Coos County Mental Health Guide':'Coos County Mental Health Guide');
   window.scrollTo({top:0});
   closeLearn();
   document.querySelectorAll('.navitem.open').forEach(closeNavItem);
